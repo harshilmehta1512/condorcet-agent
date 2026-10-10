@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:12,049
+An analyst wants to put this EV answer in a client note. We transcribed Ezio's report from its screen because no export was available. This saved workflow uses clearly labelled simulated judges.
+
+2
+00:00:12,049 --> 00:00:23,776
+The agent breaks Ezio's report into evidence pieces. It groups sources by origin and excludes sources that predate the claim period. The table exposes the counts and the original verdicts.
+
+3
+00:00:23,776 --> 00:00:35,776
+Inspired by random subspaces, each judge sees a different evidence slice. Filled cells show what each judge saw. Individual votes differ, while code enforces a safety floor.
+
+4
+00:00:35,776 --> 00:00:49,080
+Here, every judge who saw claim C1 blocks. We call this an information gap created by hiding evidence, not genuine uncertainty. Ezio's contradicted verdict also quotes the same figure as the claim.
+
+5
+00:00:49,080 --> 00:01:04,046
+The research lead gets one targeted question and confirms the figure. In this saved simulated rerun, BLOCK becomes stable ESCALATE: other claims still need verification. The live answer button also works, with isolated output files.
+
+6
+00:01:04,046 --> 00:01:16,717
+Now a different report: nuclear energy, for a policy staffer's internal brief. The same agent returns stable PULL SOURCE. It asks for further evidence instead of silently approving the answer.
+
+7
+00:01:16,717 --> 00:01:29,797
+These simulated judges see different evidence slices. The recorded tally is seven PULL SOURCE and two REWRITE. The baseline says REWRITE, so the action differs; that comparison does not prove better quality.
+
+8
+00:01:29,797 --> 00:01:42,454
+We also tested real models through TokenRouter. In the EV subspace run, six judges answered; four chose REWRITE and two PULL SOURCE. Failed judges are excluded rather than counted as votes.
+
+9
+00:01:42,454 --> 00:01:55,681
+With full evidence, seven of eight real judges chose REWRITE. Hiding evidence lowered agreement on this report; improved decisions remain unproven. The claim is that a decision holds up, not that it is correct.

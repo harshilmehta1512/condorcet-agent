@@ -7,3 +7,12 @@ __pycache__/
 .gstack/
 .DS_Store
 .claude/
+
+# Local UI runtime and generated intermediates
+.ui_deps/
+ui/live_results/
+ui/video/*.wav
+ui/video/segment_*.mp4
+ui/video/frame_*.png
+ui/video/concat.txt
+ui/video/verified_frame.jpg

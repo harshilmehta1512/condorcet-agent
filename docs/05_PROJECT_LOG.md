@@ -2,6 +2,8 @@
 
 Update after every completed task (rule F1). Last updated: **3:13 PM PT**. Real-model experiment on EV done (both conditions); other reports stay on simulated judges (labelled). Saved before→after snapshots for EV and AGI; human denial now reaches all judges. External-review fix (D22) shipped: INFO_GAP status + simple-rule baseline + panel-adds flag. Real-model (TokenRouter) path hardened and tested end to end against a local fake server; ready for the key. Deadline extended to **3:45** (freeze 3:15, record 3:15–3:35, submit 3:35). **All four real reports** run end to end (offline judges): EV/analyst → ESCALATE (FRAGILE→STABLE after human); Nuclear/policy brief → PULL_SOURCE (STABLE); Work-from-home/comms → ESCALATE (STABLE 9/9); AGI/board memo → ESCALATE (FRAGILE, splits on C1). Need: TokenRouter key (else label judges as simulated), repo link.
 
+**UI handoff (3:28 PM PT):** T3, T9 and T10 complete. Submission draft at `ui/submission_draft.md`; video at `ui/video/condorcet_streamlit_demo.mp4`. UI verified at http://127.0.0.1:8502. Repository URL supplied: https://github.com/harshilmehta1512/condorcet-agent. Actual buildathon submission remains pending. Backend-owned source/data hashes unchanged after UI checks.
+
 ## 1. Team split
 | Person | Owns |
 |---|---|
@@ -17,7 +19,6 @@ Update after every completed task (rule F1). Last updated: **3:13 PM PT**. Real-
 |---|---|---|
 | T1 | Generate the 4 Ezio sample reports → PDFs in `reports/` | You |
 | T2 | TokenRouter key → `.env`; confirm model IDs | You |
-| T3 | UI skeleton on `ui/sample_decision.json` | P2 |
 
 ### ⏭ Next
 | ID | Task | Owner | Target |
@@ -30,8 +31,6 @@ Update after every completed task (rule F1). Last updated: **3:13 PM PT**. Real-
 |---|---|---|---|
 | T7 | Run all 4 reports; check decisions are sensible and differ where they should | Claude + you | 2:25 |
 | T8 | Human-loop demo run (`--human`) on the main report | Claude | 2:25 |
-| T9 | UI on real data | P2 | 2:30 |
-| T10 | Freeze, record video (main + second report) | P2 + you | 2:55 |
 | T11 | Submit: video, repo, approach, tools-used note (incl. morning utility reuse, D7), Best Use of Ezio note | You | 3:00 |
 
 ## 3. Decisions
@@ -61,11 +60,17 @@ Update after every completed task (rule F1). Last updated: **3:13 PM PT**. Real-
 | D23 | 2:56 | Second external review: (1) flip evidence = what the rule flags → already reported as `panel_adds: no` (D22), stays an open question until real models; (2) inputs are transcriptions → disclosed in every file, README, UI header and the video's first line; (3) saved files lacked before→after → `decisions/{ev_market,agi_timelines}.after_human.json` snapshots | Close each point with evidence in the repo |
 | D24 | 3:12 | **Real-model control experiment (EV, TokenRouter, 9 judges from 9 families; rate limit 15 req/min → throttled):** full evidence: 8 answered, **REWRITE 7/8 → STABLE**. Split evidence: 6 answered, REWRITE 4 / PULL_SOURCE 2 → split. **Hiding evidence lowered agreement; it did not reveal hidden disagreement.** This supports the external review on this report: the split panel did not add value here. Real judges also preferred REWRITE over the simple rule's BLOCK, and none caught Ezio's self-contradicting C1 verdict (our code check did; one judge even called C1 "contradicted by six independent origins"). Files: `decisions/ev_market.llm_full_evidence.json`, `decisions/ev_market.llm_subspace.json` | Report the measured result, not the hoped one. n = 1 report |
 | B7 | 3:00 | Real run: 3 of 9 judges failed (HTTP 429 "Maximum 15 requests within 1 minute"; empty reply from deepseek-v4-flash; Kimi read timeout) | TokenRouter rate limit; reasoning model | Throttle to one request start per 4.2 s; deepseek-v4-flash → deepseek-v3.2; failed judges excluded, not counted | Mitigated (still 1–3 failures per run) |
+| D28 | 3:28 PM PT | Video uses actual app screenshots, saved states and synthetic narration; capture method disclosed in frame headers and ui/README.md. Both reports and real-model limitation shown | Demo is reproducible without network; no claim of live API footage or proven panel improvement |
+| D29 | GitHub handoff | Added the Streamlit app and new narrated video as condorcet_streamlit_demo.mp4 alongside the existing HTML UI and original demo videos; excluded local dependencies and intermediates | User authorized push to harshilmehta1512/condorcet-agent; preserve existing team assets |
+| D25 | 3:23 | UI shows INFO_GAP, baseline and panel-adds, labels offline judges and real TokenRouter experiments, and discloses input transcription | Implement current contracts and D22–D24 honestly |
+| D26 | 3:23 | Live human reruns seed the selected previous state and use CONDORCET_OUT/CACHE under ui/live_results; backend-owned files stay read-only | User boundary prohibits overwriting teammate decisions; verified hashes unchanged |
+| D27 | 3:23 | Stability threshold is extracted from backend reason text; missing threshold, n_eff, and grouping reasons are shown as not supplied | Locked contract has no threshold key; no fabricated metrics or grouping |
 | D11 | 1:41 | Human answer → offline keyword mapping (confirm / deny / inconclusive) onto the flip claim; shown to all judges as H1 | Deterministic, demo-safe |
 
 ## 4. Bugs
 | ID | Time | Symptom | Cause | Fix | Status |
 |---|---|---|---|---|---|
+| B8 | 3:23 | Windows live rerun wrote JSON then failed while printing Unicode arrows | Python child used cp1252 stdout | UI passes PYTHONIOENCODING=utf-8 and PYTHONUTF8=1; live offline rerun verified | Fixed |
 | B6 | 2:55 | AGI: COO says C1 is false, but the decision stayed INFO_GAP | Simulated judges ignored the human piece H1 unless they had also been shown the C1 claim piece | A denial in H1 now counts for every judge (H1 is shown to all) → AGI after: BLOCK STABLE | Fixed |
 | B4 | 2:38 | A failed API call (error text) was parsed into an ESCALATE vote | `parse_vote` defaulted unparseable replies to ESCALATE, including errors | Errors are now returned separately, the judge is excluded and listed under `panel.failed`; < 5 answering judges → refuse to decide | Fixed |
 | B5 | 2:41 | 3 of 9 calls failed with connection errors when all fired at once (fake server) | 9 simultaneous requests; retry logic switched to "reasoning params" on any error | Max 4 calls in flight; network/429/5xx → backoff retry; only HTTP 400 or empty reply → reasoning-model params (no temperature, max_completion_tokens 2000) | Fixed |
@@ -76,6 +81,10 @@ Update after every completed task (rule F1). Last updated: **3:13 PM PT**. Real-
 ## 5. Done
 | ID | Task | Finished |
 |---|---|---|
+| T10 | Narrated browser-screen walkthrough: EV, saved human answer, Nuclear (over 20 s), real-model experiment/control; 1280×720, under 2 min | 3:28 PM PT |
+| T11-draft | Approach, original + revised pitch, citations, tool/reuse disclosure, Best Use of Ezio note; repo URL left pending | 3:28 PM PT |
+| T3 | Streamlit UI + exact-contract FRAGILE/STABLE synthetic fixtures; app runs and both fallbacks checked | 3:21 PM PT |
+| T9 | All four real reports + saved real-model experiments; source groups, baseline, INFO_GAP, saved comparison, isolated live human rerun; missing/partial JSON verified | 3:23 PM PT |
 | T0 | Read official track specs; cloned starter repos | 1:17 |
 | T-docs | Docs 01–05 rewritten for the locked design | 1:40 |
 | T13 | D22 implemented; all 4 reports + EV human loop re-run (EV: BLOCK INFO_GAP → after human: ESCALATE STABLE) | 2:53 |

@@ -1,0 +1,77 @@
+{
+  "duration_seconds": 115.68081632653062,
+  "scenes": [
+    {
+      "image": "01_ev_header.jpg",
+      "title": "EV market · accountable decision",
+      "minimum": 12,
+      "say": "An analyst wants to put this EV answer in a client note. We transcribed Ezio's report from its screen because no export was available. This saved workflow uses clearly labelled simulated judges.",
+      "start_seconds": 0.0,
+      "duration_seconds": 12.048616780045352
+    },
+    {
+      "image": "02_ev_evidence.jpg",
+      "title": "Claim-level evidence · source independence",
+      "minimum": 10,
+      "say": "The agent breaks Ezio's report into evidence pieces. It groups sources by origin and excludes sources that predate the claim period. The table exposes the counts and the original verdicts.",
+      "start_seconds": 12.048616780045352,
+      "duration_seconds": 11.72748299319728
+    },
+    {
+      "image": "03_ev_panel.jpg",
+      "title": "Different evidence views · simulated judges",
+      "minimum": 12,
+      "say": "Inspired by random subspaces, each judge sees a different evidence slice. Filled cells show what each judge saw. Individual votes differ, while code enforces a safety floor.",
+      "start_seconds": 23.77609977324263,
+      "duration_seconds": 12
+    },
+    {
+      "image": "04_ev_flip.jpg",
+      "title": "INFO_GAP · evidence exposure explains the split",
+      "minimum": 10,
+      "say": "Here, every judge who saw claim C1 blocks. We call this an information gap created by hiding evidence, not genuine uncertainty. Ezio's contradicted verdict also quotes the same figure as the claim.",
+      "start_seconds": 35.776099773242635,
+      "duration_seconds": 13.303809523809523
+    },
+    {
+      "image": "05_ev_human.jpg",
+      "title": "Saved human answer · BEFORE → AFTER",
+      "minimum": 12,
+      "say": "The research lead gets one targeted question and confirms the figure. In this saved simulated rerun, BLOCK becomes stable ESCALATE: other claims still need verification. The live answer button also works, with isolated output files.",
+      "start_seconds": 49.079909297052154,
+      "duration_seconds": 14.966439909297053
+    },
+    {
+      "image": "06_nuclear_header.jpg",
+      "title": "Second report · Nuclear energy",
+      "minimum": 11,
+      "say": "Now a different report: nuclear energy, for a policy staffer's internal brief. The same agent returns stable PULL SOURCE. It asks for further evidence instead of silently approving the answer.",
+      "start_seconds": 64.0463492063492,
+      "duration_seconds": 12.670975056689342
+    },
+    {
+      "image": "07_nuclear_panel.jpg",
+      "title": "Nuclear energy · stable PULL_SOURCE",
+      "minimum": 11,
+      "say": "These simulated judges see different evidence slices. The recorded tally is seven PULL SOURCE and two REWRITE. The baseline says REWRITE, so the action differs; that comparison does not prove better quality.",
+      "start_seconds": 76.71732426303855,
+      "duration_seconds": 13.079229024943311
+    },
+    {
+      "image": "08_real_subspace.jpg",
+      "title": "Real TokenRouter experiment · evidence slices",
+      "minimum": 9,
+      "say": "We also tested real models through TokenRouter. In the EV subspace run, six judges answered; four chose REWRITE and two PULL SOURCE. Failed judges are excluded rather than counted as votes.",
+      "start_seconds": 89.79655328798187,
+      "duration_seconds": 12.657233560090702
+    },
+    {
+      "image": "09_real_full.jpg",
+      "title": "Real-model control · report the limitation",
+      "minimum": 11,
+      "say": "With full evidence, seven of eight real judges chose REWRITE. Hiding evidence lowered agreement on this report; improved decisions remain unproven. The claim is that a decision holds up, not that it is correct.",
+      "start_seconds": 102.45378684807257,
+      "duration_seconds": 13.22702947845805
+    }
+  ]
+}
