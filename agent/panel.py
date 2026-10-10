@@ -17,11 +17,16 @@ if _env.exists():
             os.environ.setdefault(_k.strip(), _v.strip().strip('"'))
 
 # short name -> TokenRouter model id. Fill/confirm at T2; keep >= 5 families.
-JUDGES = {
-    "gpt-nano": "gpt-5.4-nano", "gpt-mini": "gpt-5.4-mini",
-    "haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5",
-    "gemini": "gemini-flash-latest", "llama": "llama-latest", "qwen": "qwen-latest",
-    "mistral": "mistral-small-latest", "deepseek": "deepseek-chat",
+JUDGES = {  # 9 judges, 9 different model families (TokenRouter IDs confirmed via GET /models at 2:57 PM)
+    "gpt-5.4-mini": "openai/gpt-5.4-mini",
+    "claude-haiku-5.5": "anthropic/claude-haiku-5.5",
+    "gemini-3.5-flash": "google/gemini-3.5-flash",
+    "deepseek-v3.2": "deepseek/deepseek-v3.2",
+    "qwen3.5-flash": "qwen/qwen3.5-flash",
+    "mistral-small": "mistralai/mistral-small-2603",
+    "grok-4.1-fast": "x-ai/grok-4.1-fast",
+    "glm-5.3-flash": "z-ai/glm-5.3-flash",
+    "kimi-k2.5": "moonshotai/kimi-k2.5",
 }
 
 PROMPT = """You are one member of a review panel deciding what should happen next with an AI-generated answer.
@@ -58,7 +63,7 @@ def parse_vote(text, seen):
     if action not in ("APPROVE", "REWRITE", "PULL_SOURCE", "ESCALATE", "BLOCK"):
         hit = re.search(r"APPROVE|REWRITE|PULL_SOURCE|ESCALATE|BLOCK", (text or "").upper())
         action = hit.group(0) if hit else "ESCALATE"  # unparseable -> conservative, logged in `why`
-        d.setdefault("why", "unparseable reply; defaulted to ESCALATE")
+        d.setdefault("why", f"reply not valid JSON; action read from text ({action})" if hit else "unparseable reply; defaulted to ESCALATE")
     cited = [c for c in d.get("cited", []) if c in seen]
     return action, cited, str(d.get("why", ""))[:300]
 
@@ -122,6 +127,7 @@ async def _call(client, model, prompt):
     for attempt in range(4):
         try:
             async with _SEM:
+                await _throttle()
                 r = await client.post(f"{base}/chat/completions", headers=headers,
                                       json={"model": model, "messages": [{"role": "user", "content": prompt}],
                                             **bodies[variant]})
@@ -148,12 +154,26 @@ async def _call(client, model, prompt):
 
 
 _SEM = None
+_LOCK = None
+_LAST = [0.0]
+MIN_GAP_S = 4.2  # TokenRouter limit: 15 requests per minute
+
+
+async def _throttle():
+    """Space request starts >= MIN_GAP_S apart across all judges."""
+    async with _LOCK:
+        wait = _LAST[0] + MIN_GAP_S - asyncio.get_event_loop().time()
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _LAST[0] = asyncio.get_event_loop().time()
 
 
 async def run_llm_panel(prompts):
     global _SEM
     import httpx
+    global _LOCK
     _SEM = asyncio.Semaphore(4)  # at most 4 calls in flight
+    _LOCK = asyncio.Lock()
     async with httpx.AsyncClient(timeout=90) as client:
         return await asyncio.gather(*(_call(client, JUDGES[j], p) for j, p in prompts.items()))
 

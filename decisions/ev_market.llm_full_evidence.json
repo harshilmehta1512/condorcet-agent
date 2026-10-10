@@ -1,0 +1,681 @@
+{
+ "report": "ev_market",
+ "question": "Give a 2024 global EV market snapshot.",
+ "context": {
+  "role": "Equity analyst",
+  "use": "including the answer in a client note",
+  "stakes": "high",
+  "accountable": "Research lead"
+ },
+ "action": "REWRITE",
+ "status": "STABLE",
+ "headline": "Judges agree across different evidence slices (88%) \u2192 REWRITE.",
+ "evidence": [
+  {
+   "id": "E1",
+   "kind": "claim",
+   "ref": "C1",
+   "summary": "C1 (Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)): Geely Group: 1.49 million new-energy vehicles",
+   "verdict": "Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)",
+   "text": "Geely Group: 1.49 million new-energy vehicles",
+   "n_sources": 6,
+   "n_origins": 6,
+   "origins": [
+    {
+     "ids": [
+      "S1"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S2"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S3"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S4"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S5"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S6"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S1",
+     "type": "Official",
+     "title": "Geely Auto Exceeds 3.02 Million Vehicle Sales in 2025, Sets New Growth Targets for 2026",
+     "date": "2026-03-23",
+     "outlet": ""
+    },
+    {
+     "id": "S2",
+     "type": "Official",
+     "title": "Brand",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S3",
+     "type": "Reference",
+     "title": "Geely Auto - Wikipedia",
+     "date": "2026-08-23",
+     "outlet": "Wikipedia"
+    },
+    {
+     "id": "S4",
+     "type": "Other",
+     "title": "Geely aiming for stable growth amid intense market contest - Chinadaily.com.cn",
+     "date": "2025-01-13",
+     "outlet": "Chinadaily.com.cn"
+    },
+    {
+     "id": "S5",
+     "type": "Other",
+     "title": "Geely Auto (A brand under Zhejiang Geely Holding Group) _Baiduwiki",
+     "date": "",
+     "outlet": "Baiduwiki"
+    },
+    {
+     "id": "S6",
+     "type": "Other",
+     "title": "Geely Cars: China's Global Auto Group and EV Strategy - ChoZan",
+     "date": "2026-06-02",
+     "outlet": "ChoZan"
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "claim",
+   "ref": "C2",
+   "summary": "C2 (Not enough evidence): 2024 global EV market snapshot",
+   "verdict": "Not enough evidence",
+   "text": "2024 global EV market snapshot",
+   "n_sources": 3,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S7"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S8"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S9"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S7",
+     "type": "News",
+     "title": "America's retreat is increasing China's control of global EV markets",
+     "date": "2026-02-06",
+     "outlet": ""
+    },
+    {
+     "id": "S8",
+     "type": "News",
+     "title": "Global EV sales growth likely to slow after 20% jump in rocky 2025, research firm says",
+     "date": "2026-01-14",
+     "outlet": ""
+    },
+    {
+     "id": "S9",
+     "type": "News",
+     "title": "Global EV sales fall again in February",
+     "date": "2026-03-13",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E3",
+   "kind": "claim",
+   "ref": "C3",
+   "summary": "C3 (Not enough evidence): Top 3 manufacturers by EV volume",
+   "verdict": "Not enough evidence",
+   "text": "Top 3 manufacturers by EV volume",
+   "n_sources": 3,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S10"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S11"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S12"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S10",
+     "type": "News",
+     "title": "A bumpy road for EV manufacturers | TechCrunch",
+     "date": "2024-02-23",
+     "outlet": "TechCrunch"
+    },
+    {
+     "id": "S11",
+     "type": "News",
+     "title": "2027 Chevy Bolt, Rare Sub-$30K EV, Arrives In Volume At Dealers",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S12",
+     "type": "News",
+     "title": "Used EV Market Volume Reaches New High, So What's Next?",
+     "date": "",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E4",
+   "kind": "claim",
+   "ref": "C4",
+   "summary": "C4 (Supported): Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue",
+   "verdict": "Supported",
+   "text": "Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue",
+   "n_sources": 6,
+   "n_origins": 4,
+   "origins": [
+    {
+     "ids": [
+      "S13"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S14",
+      "S18"
+     ],
+     "why": [
+      "same story, same day (0.33)"
+     ]
+    },
+    {
+     "ids": [
+      "S15"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S17"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [
+    "S16"
+   ],
+   "sources": [
+    {
+     "id": "S13",
+     "type": "Official",
+     "title": "tsla-20241231",
+     "date": "2025-01-29",
+     "outlet": "Tesla SEC filing"
+    },
+    {
+     "id": "S14",
+     "type": "News",
+     "title": "Tesla Reports First Annual Revenue Decline Ever",
+     "date": "2026-01-28",
+     "outlet": ""
+    },
+    {
+     "id": "S15",
+     "type": "Other",
+     "title": "Tesla releases 2024 financial results: Revenue is up, but profits are down - electrive.com",
+     "date": "2025-01-29",
+     "outlet": "electrive.com"
+    },
+    {
+     "id": "S16",
+     "type": "Other",
+     "title": "Tesla Growth and Production Statistics: How Many Vehicles Are Sold Across the Globe?",
+     "date": "2022-09-14",
+     "outlet": ""
+    },
+    {
+     "id": "S17",
+     "type": "Other",
+     "title": "Tesla Revenue 2012-2026 | TSLA",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S18",
+     "type": "Other",
+     "title": "Tesla tops Q4 expectations as annual revenue falls for first time",
+     "date": "2026-01-29",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "claim",
+   "ref": "C5",
+   "summary": "C5 (Supported): Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023",
+   "verdict": "Supported",
+   "text": "Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023",
+   "n_sources": 6,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S19"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S20"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S24"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [
+    "S21",
+    "S22",
+    "S23"
+   ],
+   "sources": [
+    {
+     "id": "S19",
+     "type": "Official",
+     "title": "Trends in electric car markets - Global EV Outlook 2025 - Analysis - IEA",
+     "date": "",
+     "outlet": "IEA"
+    },
+    {
+     "id": "S20",
+     "type": "Official",
+     "title": "Hybrid-Electric, Plug-in Hybrid-Electric and Electric Vehicle Sales | Bureau of Transportation Statistics",
+     "date": "2026-08-22",
+     "outlet": "Bureau of Transportation Statistics"
+    },
+    {
+     "id": "S21",
+     "type": "Reference",
+     "title": "Electric car use by country",
+     "date": "2010-04-10",
+     "outlet": ""
+    },
+    {
+     "id": "S22",
+     "type": "Reference",
+     "title": "Tracking global data on electric vehicles | Our World in Data",
+     "date": "2024-02-26",
+     "outlet": "Our World in Data"
+    },
+    {
+     "id": "S23",
+     "type": "Other",
+     "title": "Unlocking growth: 5 key electric vehicle stats for 2024 - Smartcar blog",
+     "date": "2024-01-10",
+     "outlet": "Smartcar blog"
+    },
+    {
+     "id": "S24",
+     "type": "Other",
+     "title": "The Global Electric Vehicle Market In 2025",
+     "date": "2025-08-07",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E6",
+   "kind": "scores",
+   "ref": "modules",
+   "summary": "Module scores (of 5): accuracy 3, bias 5, tone 5, agreement 5"
+  }
+ ],
+ "panel": {
+  "condition": "full_evidence",
+  "n_judges": 8,
+  "n_failed": 1,
+  "failed": [
+   {
+    "judge": "kimi-k2.5",
+    "model": "moonshotai/kimi-k2.5",
+    "error": "ReadTimeout: "
+   }
+  ],
+  "r": 9,
+  "mode": "llm",
+  "votes": [
+   {
+    "judge": "gpt-5.4-mini",
+    "model": "openai/gpt-5.4-mini",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E4",
+     "E5",
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "why": "Core market figures are supported, but the manufacturer ranking includes a contradicted Geely number and several other assertions lack enough evidence, so the answer should be hedged or corrected before client use.",
+    "cached": true
+   },
+   {
+    "judge": "claude-haiku-5.5",
+    "model": "anthropic/claude-haiku-5.5",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5"
+    ],
+    "why": "The Geely 1.49 million figure is contradicted and the top-3 ranking and overall snapshot have insufficient evidence, so those sentences must be removed or hedged, while the supported Tesla revenue and 17.1 million EV sales claims can stay, though the battery price, China production share, and recycl",
+    "cached": true
+   },
+   {
+    "judge": "gemini-3.5-flash",
+    "model": "google/gemini-3.5-flash",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [],
+    "why": "reply not valid JSON; action read from text (REWRITE)",
+    "cached": true
+   },
+   {
+    "judge": "deepseek-v3.2",
+    "model": "deepseek/deepseek-v3.2",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "why": "The Geely volume figure is contradicted, and the core market snapshot and top 3 manufacturer claims lack sufficient supporting evidence for high-stakes use.",
+    "cached": false
+   },
+   {
+    "judge": "qwen3.5-flash",
+    "model": "qwen/qwen3.5-flash",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E2",
+     "E3",
+     "E6"
+    ],
+    "why": "Key claims are contradicted or lack sufficient evidence and overall accuracy is low, requiring further independent verification before high-stakes publication.",
+    "cached": true
+   },
+   {
+    "judge": "mistral-small",
+    "model": "mistralai/mistral-small-2603",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "why": "Multiple claims lack sufficient independent evidence (E2, E3) or are contradicted (E1), requiring verification or hedging before use in a high-stakes client note.",
+    "cached": false
+   },
+   {
+    "judge": "grok-4.1-fast",
+    "model": "x-ai/grok-4.1-fast",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "why": "Geely volume contradicted and top-3 / overall snapshot lack sufficient independent confirmation for high-stakes use.",
+    "cached": true
+   },
+   {
+    "judge": "glm-5.3-flash",
+    "model": "z-ai/glm-5.3-flash",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E3",
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "why": "The Geely 1.49M figure is contradicted by six independent origins and the top-3 manufacturer ranking has no supporting evidence, while the global sales (E5) and Tesla revenue (E4) claims are well corroborated, so the flawed sentences should be corrected or hedged rather than approving, re-sourcing, ",
+    "cached": false
+   }
+  ],
+  "tally": {
+   "REWRITE": 7,
+   "PULL_SOURCE": 1
+  },
+  "top_action": "REWRITE",
+  "top_share": 0.875
+ },
+ "flip_evidence": null,
+ "hard_rules": [
+  {
+   "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "triggered": true,
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
+   "triggered": false,
+   "evidence": []
+  }
+ ],
+ "load_bearing": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5"
+ ],
+ "baseline": {
+  "action": "BLOCK",
+  "focus": "C1",
+  "rule": "a claim Ezio marked contradicted"
+ },
+ "panel_adds": {
+  "value": true,
+  "detail": "different action (REWRITE vs rule BLOCK)"
+ },
+ "reasons": [
+  {
+   "text": "C4 lists 6 sources but only 4 independent origin(s) could confirm it (1 published before the period it covers)",
+   "evidence": [
+    "E4",
+    "C4",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18"
+   ]
+  },
+  {
+   "text": "C5 lists 6 sources but only 3 independent origin(s) could confirm it (3 published before the period it covers)",
+   "evidence": [
+    "E5",
+    "C5",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+   ]
+  },
+  {
+   "text": "C1: Ezio marks it contradicted, but the figure it quotes from its sources matches the claim; the verdict itself needs a human check",
+   "evidence": [
+    "E1",
+    "C1"
+   ]
+  },
+  {
+   "text": "Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "text": "Panel: {'REWRITE': 7, 'PULL_SOURCE': 1}; top action REWRITE at 88% (\u2265 70% needed) \u2192 STABLE",
+   "evidence": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: YES, different action (REWRITE vs rule BLOCK)",
+   "evidence": [
+    "C1"
+   ]
+  }
+ ],
+ "unchecked": [
+  "Average lithium-ion battery pack price: The 2024 global average fell to $115 per kWh, a sharp year-over-year decline.",
+  "China's share of global EV production: China accounted for roughly 70% of global EV production in 2024, maintaining its dominant manufacturing position.",
+  "Battery recycling: Battery recycling expanded quickly in 2024, with leading processes now able to recover over 90% of key metals such as nickel, cobalt, and lithium, improving supply security and reducing raw-material intensity.",
+  "Overall, 2024 was another record year for EVs: sales kept growing, battery costs fell materially, China remained the production hub, and recycling became a more important part of the industry's economics."
+ ],
+ "human": {
+  "to": "Research lead",
+  "question": null,
+  "answer": null
+ },
+ "before": null,
+ "trace": [
+  "parsed 5 claims, 0 findings",
+  "6 evidence pieces; each shown to 9 of 9 judges",
+  "panel mode: LLM via TokenRouter",
+  "tally {'REWRITE': 7, 'PULL_SOURCE': 1} \u2192 STABLE",
+  "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
+  "final action: REWRITE"
+ ]
+}

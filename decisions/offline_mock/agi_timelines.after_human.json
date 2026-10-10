@@ -1,0 +1,728 @@
+{
+ "report": "agi_timelines",
+ "question": "How far has AI automation of knowledge work come?",
+ "context": {
+  "role": "Strategy lead",
+  "use": "a board memo proposing to replace tier-1 and tier-2 support staff with AI agents",
+  "stakes": "high",
+  "accountable": "Chief Operating Officer"
+ },
+ "action": "BLOCK",
+ "status": "STABLE",
+ "headline": "Judges agree across different evidence slices (100%) \u2192 BLOCK.",
+ "evidence": [
+  {
+   "id": "E1",
+   "kind": "claim",
+   "ref": "C1",
+   "summary": "C1 (Contradicted: amount (sources say two-thirds of chats and cut resolution time from 11 minutes to under 2)): They drive resolution rates to 100% and completely eliminate human bottlenecks, delivering flawless, zero-latency customer experiences round the clock.",
+   "verdict": "Contradicted: amount (sources say two-thirds of chats and cut resolution time from 11 minutes to under 2)",
+   "text": "They drive resolution rates to 100% and completely eliminate human bottlenecks, delivering flawless, zero-latency customer experiences round the clock.",
+   "n_sources": 4,
+   "n_origins": 4,
+   "origins": [
+    {
+     "ids": [
+      "S1"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S2"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S3"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S4"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S1",
+     "type": "Other",
+     "title": "Best AI Customer Support Platforms 2026: Ranked by Resolution Rate | Lorikeet",
+     "date": "2026-05-14",
+     "outlet": "Lorikeet"
+    },
+    {
+     "id": "S2",
+     "type": "Other",
+     "title": "AI Customer Service Benchmark 2026 by Industry | Aissist.io",
+     "date": "2026-07-15",
+     "outlet": "Aissist.io"
+    },
+    {
+     "id": "S3",
+     "type": "Other",
+     "title": "15 Predictions That Will Redefine Customer Experience in 2026 - Medallia",
+     "date": "2025-12-12",
+     "outlet": "Medallia"
+    },
+    {
+     "id": "S4",
+     "type": "Other",
+     "title": "AI-Enhanced Customer Service: The Zero-Latency Strategy",
+     "date": "",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "claim",
+   "ref": "C2",
+   "summary": "C2 (Not enough evidence): The year 2025 marked the absolute paradigm shift in enterprise productivity as autonomous AI agents fundamentally replaced traditional knowledge work.",
+   "verdict": "Not enough evidence",
+   "text": "The year 2025 marked the absolute paradigm shift in enterprise productivity as autonomous AI agents fundamentally replaced traditional knowledge work.",
+   "n_sources": 4,
+   "n_origins": 1,
+   "origins": [
+    {
+     "ids": [
+      "S6",
+      "S7"
+     ],
+     "why": [
+      "same outlet"
+     ]
+    }
+   ],
+   "predating": [
+    "S5",
+    "S8"
+   ],
+   "sources": [
+    {
+     "id": "S5",
+     "type": "Official",
+     "title": "The Non-Human Enterprise: How AI Agents Reshape Organizations | California Management Review",
+     "date": "2025-10-22",
+     "outlet": "California Management Review"
+    },
+    {
+     "id": "S6",
+     "type": "News",
+     "title": "Enterprise SaaS Meets AI Agents - WSJ",
+     "date": "2026-03-19",
+     "outlet": "WSJ"
+    },
+    {
+     "id": "S7",
+     "type": "News",
+     "title": "Enterprise SaaS Meets AI Agents - WSJ",
+     "date": "2026-03-19",
+     "outlet": "WSJ"
+    },
+    {
+     "id": "S8",
+     "type": "News",
+     "title": "SUPERAGENT AI Is Fully Replacing Traditional Insurance Agents with Autonomous AI Agents by Year-End | AP News",
+     "date": "2025-08-12",
+     "outlet": "AP News"
+    }
+   ]
+  },
+  {
+   "id": "E3",
+   "kind": "claim",
+   "ref": "C3",
+   "summary": "C3 (Not enough evidence (sources say: This doesn't diminish the importance of Tier 1 professionals, of course; rather, it evolves their role.)): Leading organizations have entirely eradicated legacy tier-1 and tier-2 customer support structures.",
+   "verdict": "Not enough evidence (sources say: This doesn't diminish the importance of Tier 1 professionals, of course; rather, it evolves their role.)",
+   "text": "Leading organizations have entirely eradicated legacy tier-1 and tier-2 customer support structures.",
+   "n_sources": 6,
+   "n_origins": 5,
+   "origins": [
+    {
+     "ids": [
+      "S9"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S10",
+      "S14"
+     ],
+     "why": [
+      "same story, same day (0.38)"
+     ]
+    },
+    {
+     "ids": [
+      "S11"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S12"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S13"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S9",
+     "type": "Other",
+     "title": "Why Tier-1 Support Mostly Disappears by 2027 | LiveHelpNow Blog",
+     "date": "2026-07-24",
+     "outlet": "LiveHelpNow Blog"
+    },
+    {
+     "id": "S10",
+     "type": "Other",
+     "title": "What Is Tier 1 vs. Tier 2 vs. Tier 3 Help Desk Support?",
+     "date": "2026-05-18",
+     "outlet": ""
+    },
+    {
+     "id": "S11",
+     "type": "Other",
+     "title": "Customer service tiers: L1, L2, L3 explained for B2B",
+     "date": "2026-05-29",
+     "outlet": ""
+    },
+    {
+     "id": "S12",
+     "type": "Other",
+     "title": "Should You Take A Tiered Or Tier-less Approach To Customer Support? | Yext",
+     "date": "2023-03-21",
+     "outlet": "Yext"
+    },
+    {
+     "id": "S13",
+     "type": "Other",
+     "title": "5 support tier levels explained: How to set them up",
+     "date": "2026-06-19",
+     "outlet": ""
+    },
+    {
+     "id": "S14",
+     "type": "Other",
+     "title": "Tier 1, 2 & 3 Support Levels: A B2B Decision Guide",
+     "date": "2026-05-18",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E4",
+   "kind": "claim",
+   "ref": "C4",
+   "summary": "C4 (Not enough evidence): In the legal sector, AI agents instantly ingest millions of precedents to generate bulletproof contracts and automate exhaustive case research in seconds, effectively rendering the traditional human associate model obsolete.",
+   "verdict": "Not enough evidence",
+   "text": "In the legal sector, AI agents instantly ingest millions of precedents to generate bulletproof contracts and automate exhaustive case research in seconds, effectively rendering the traditional human associate model obsolete.",
+   "n_sources": 4,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S15",
+      "S16"
+     ],
+     "why": [
+      "same outlet"
+     ]
+    },
+    {
+     "ids": [
+      "S17"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S18"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S15",
+     "type": "Official",
+     "title": "The Rise of AI in Legal Practice: Opportunities, Challenges, & Ethical Considerations - Colorado Technology Law Journal",
+     "date": "2025-03-21",
+     "outlet": "Colorado Technology Law Journal"
+    },
+    {
+     "id": "S16",
+     "type": "Official",
+     "title": "The Rise of AI in Legal Practice: Opportunities, Challenges, & Ethical Considerations - Colorado Technology Law Journal",
+     "date": "",
+     "outlet": "Colorado Technology Law Journal"
+    },
+    {
+     "id": "S17",
+     "type": "Official",
+     "title": "How Is AI Impacting the Legal Profession?",
+     "date": "2026-01-20",
+     "outlet": ""
+    },
+    {
+     "id": "S18",
+     "type": "News",
+     "title": "The Product Leader's Dilemma: Designing For AI Agents, Not Just Users",
+     "date": "2026-02-18",
+     "outlet": ""
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "claim",
+   "ref": "C5",
+   "summary": "C5 (Not enough evidence): They independently scrape global market data, identify hyper-targeted prospects, and execute deeply personalized, multi-channel outreach.",
+   "verdict": "Not enough evidence",
+   "text": "They independently scrape global market data, identify hyper-targeted prospects, and execute deeply personalized, multi-channel outreach.",
+   "n_sources": 6,
+   "n_origins": 5,
+   "origins": [
+    {
+     "ids": [
+      "S19",
+      "S23"
+     ],
+     "why": [
+      "near-identical titles (0.62)"
+     ]
+    },
+    {
+     "ids": [
+      "S20"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S21"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S22"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S24"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S19",
+     "type": "Other",
+     "title": "Best Multichannel Outreach Tools in 2026 (10 Options)",
+     "date": "2026-04-10",
+     "outlet": ""
+    },
+    {
+     "id": "S20",
+     "type": "Other",
+     "title": "Lead Generation Guide 2026: Best Techniques & Strategies",
+     "date": "2022-08-23",
+     "outlet": ""
+    },
+    {
+     "id": "S21",
+     "type": "Other",
+     "title": "Sales Prospecting Tools: 10 Best Platforms for 2026",
+     "date": "2025-12-30",
+     "outlet": ""
+    },
+    {
+     "id": "S22",
+     "type": "Other",
+     "title": "What Are Sales Prospecting Techniques? AI, Signals, Multi-Channel | Apollo",
+     "date": "2026-02-18",
+     "outlet": "Apollo"
+    },
+    {
+     "id": "S23",
+     "type": "Other",
+     "title": "Best multichannel sales outreach tools 2026",
+     "date": "2026-03-24",
+     "outlet": ""
+    },
+    {
+     "id": "S24",
+     "type": "Other",
+     "title": "Top 15 Sales Prospecting Tools And Software In 2026 | Default",
+     "date": "2025-12-12",
+     "outlet": "Default"
+    }
+   ]
+  },
+  {
+   "id": "E6",
+   "kind": "scores",
+   "ref": "modules",
+   "summary": "Module scores (of 5): accuracy not scored, bias 1, tone 5, agreement 5"
+  },
+  {
+   "id": "E7",
+   "kind": "finding",
+   "ref": "F1",
+   "severity": "NOTE",
+   "summary": "F1 [NOTE] Missing source: Specific number without source: \"100%\""
+  },
+  {
+   "id": "H1",
+   "kind": "human",
+   "ref": "C1",
+   "summary": "H1 Chief Operating Officer on C1: \"Our own support data shows AI resolves about two-thirds of chats, not 100%. The claim is false.\""
+  }
+ ],
+ "panel": {
+  "n_judges": 9,
+  "n_failed": 0,
+  "failed": [],
+  "r": 4,
+  "mode": "offline-mock",
+  "votes": [
+   {
+    "judge": "gpt-nano",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E2",
+     "E3",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E2",
+     "E3",
+     "H1"
+    ],
+    "why": "C1 is contradicted",
+    "cached": true
+   },
+   {
+    "judge": "gpt-mini",
+    "model": "offline-mock",
+    "saw": [
+     "E4",
+     "E6",
+     "E7",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E4",
+     "E6",
+     "H1"
+    ],
+    "why": "C1 denied by the accountable human",
+    "cached": true
+   },
+   {
+    "judge": "haiku",
+    "model": "offline-mock",
+    "saw": [
+     "E5",
+     "E6",
+     "E7",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E5",
+     "E6",
+     "H1"
+    ],
+    "why": "C1 denied by the accountable human",
+    "cached": true
+   },
+   {
+    "judge": "sonnet",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6",
+     "E7",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E2",
+     "E5",
+     "E6",
+     "H1"
+    ],
+    "why": "C1 denied by the accountable human",
+    "cached": true
+   },
+   {
+    "judge": "gemini",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E3",
+     "E4",
+     "H1"
+    ],
+    "why": "C1 is contradicted",
+    "cached": true
+   },
+   {
+    "judge": "llama",
+    "model": "offline-mock",
+    "saw": [
+     "E3",
+     "E4",
+     "E6",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E3",
+     "E4",
+     "E6",
+     "H1"
+    ],
+    "why": "C1 denied by the accountable human",
+    "cached": true
+   },
+   {
+    "judge": "qwen",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E3",
+     "E4",
+     "H1"
+    ],
+    "why": "C1 is contradicted",
+    "cached": true
+   },
+   {
+    "judge": "mistral",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E7",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E2",
+     "E5",
+     "H1"
+    ],
+    "why": "C1 denied by the accountable human",
+    "cached": true
+   },
+   {
+    "judge": "deepseek",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E2",
+     "E5",
+     "H1"
+    ],
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E2",
+     "E5",
+     "H1"
+    ],
+    "why": "C1 is contradicted",
+    "cached": true
+   }
+  ],
+  "tally": {
+   "BLOCK": 9
+  },
+  "top_action": "BLOCK",
+  "top_share": 1.0
+ },
+ "flip_evidence": null,
+ "hard_rules": [
+  {
+   "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "triggered": true,
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
+   "triggered": false,
+   "evidence": []
+  }
+ ],
+ "load_bearing": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5"
+ ],
+ "baseline": {
+  "action": "BLOCK",
+  "focus": "C1",
+  "rule": "a claim Ezio marked contradicted"
+ },
+ "panel_adds": {
+  "value": false,
+  "detail": "same action and focus as the simple rule"
+ },
+ "reasons": [
+  {
+   "text": "C2 lists 4 sources but only 1 independent origin(s) could confirm it (2 published before the period it covers)",
+   "evidence": [
+    "E2",
+    "C2",
+    "S5",
+    "S6",
+    "S7",
+    "S8"
+   ]
+  },
+  {
+   "text": "C3 lists 6 sources but only 5 independent origin(s) could confirm it",
+   "evidence": [
+    "E3",
+    "C3",
+    "S9",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14"
+   ]
+  },
+  {
+   "text": "C4 lists 4 sources but only 3 independent origin(s) could confirm it",
+   "evidence": [
+    "E4",
+    "C4",
+    "S15",
+    "S16",
+    "S17",
+    "S18"
+   ]
+  },
+  {
+   "text": "C5 lists 6 sources but only 5 independent origin(s) could confirm it",
+   "evidence": [
+    "E5",
+    "C5",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+   ]
+  },
+  {
+   "text": "Ezio bias score 1/5: the answer leans to one side; a balanced rewrite is needed before it is used",
+   "evidence": [
+    "E6"
+   ]
+  },
+  {
+   "text": "Ezio could not score accuracy (not scored): too few checkable claims, so silence is not support",
+   "evidence": [
+    "E6"
+   ]
+  },
+  {
+   "text": "Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "text": "Panel: {'BLOCK': 9}; top action BLOCK at 100% (\u2265 70% needed) \u2192 STABLE",
+   "evidence": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "H1"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "evidence": [
+    "C1"
+   ]
+  },
+  {
+   "text": "Chief Operating Officer denies C1",
+   "evidence": [
+    "H1"
+   ]
+  }
+ ],
+ "unchecked": [],
+ "human": {
+  "to": "Chief Operating Officer",
+  "question": "The decision depends on C1: \"C1 (Contradicted: amount (sources say two-thirds of chats and cut resolution time from 11 minutes to under 2)): They drive resolution rates to 100% and complete\". Can you confirm or correct it from a source you trust?",
+  "answer": "Our own support data shows AI resolves about two-thirds of chats, not 100%. The claim is false."
+ },
+ "before": {
+  "action": "BLOCK",
+  "status": "INFO_GAP",
+  "tally": {
+   "BLOCK": 4,
+   "ESCALATE": 5
+  }
+ },
+ "trace": [
+  "parsed 5 claims, 1 findings",
+  "7 evidence pieces; each shown to 4 of 9 judges",
+  "panel mode: offline mock",
+  "tally {'BLOCK': 9} \u2192 STABLE",
+  "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
+  "final action: BLOCK"
+ ]
+}

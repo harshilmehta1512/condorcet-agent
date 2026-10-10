@@ -53,11 +53,11 @@ def interpret_human(answer, flip_ref):
     return {"confirmed": set(), "denied": set(), "reading": "is inconclusive about"}
 
 
-def run(report, context_path, offline, human_answer=None, dry_run=False):
+def run(report, context_path, offline, human_answer=None, dry_run=False, full_evidence=False):
     parsed = load_parsed(report)
     context = json.loads(Path(context_path).read_text())
     name = parsed["report"]
-    out_path = DECISIONS / f"{name}.json"
+    out_path = DECISIONS / f"{name}{'.full' if full_evidence else ''}.json"
     prev = json.loads(out_path.read_text()) if (human_answer and out_path.exists()) else None
 
     pieces = core.build_evidence(parsed)
@@ -73,6 +73,8 @@ def run(report, context_path, offline, human_answer=None, dry_run=False):
     judges = list(panel.JUDGES)
     base = [p for p in pieces if p["kind"] != "human"]
     seen, r = core.subspaces(base, judges, always=always)
+    if full_evidence:  # control condition: every judge sees every piece (external review, D24)
+        seen, r = {j: [p["id"] for p in base] + always for j in judges}, len(judges)
 
     use_llm = not offline and panel.has_key()
     votes, failed = [], []
@@ -175,7 +177,7 @@ def run(report, context_path, offline, human_answer=None, dry_run=False):
         "action": d["action"], "status": d["status"], "headline": headline,
         "evidence": [{k: v for k, v in p.items() if k != "sources"} | ({"sources": p["sources"]} if p["kind"] == "claim" else {})
                      for p in pieces],
-        "panel": {"n_judges": len(votes), "n_failed": len(failed), "failed": failed, "r": r,
+        "panel": {"condition": "full_evidence" if full_evidence else "subspace", "n_judges": len(votes), "n_failed": len(failed), "failed": failed, "r": r,
                   "mode": "llm" if use_llm else "offline-mock",
                   "votes": votes, "tally": d["tally"], "top_action": d["top_action"], "top_share": d["top_share"]},
         "flip_evidence": flip, "hard_rules": d["hard_rules"], "load_bearing": sorted(lb),
@@ -203,8 +205,9 @@ def main():
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--human", default=None)
     ap.add_argument("--dry-run", action="store_true", help="build the real prompts, print cost estimate, send nothing")
+    ap.add_argument("--full-evidence", action="store_true", help="control: every judge sees all evidence")
     a = ap.parse_args()
-    r = run(a.report, a.context, a.offline, a.human, a.dry_run)
+    r = run(a.report, a.context, a.offline, a.human, a.dry_run, a.full_evidence)
     if r is None:
         return
     print(f'{r["report"]}: {r["action"]} ({r["status"]}) | tally {r["panel"]["tally"]} | mode {r["panel"]["mode"]}')
