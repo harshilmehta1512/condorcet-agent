@@ -76,6 +76,10 @@ def mock_vote(seen, pieces_by_id, context, human):
 
     for pid in seen:
         p = pieces_by_id[pid]
+        if p["kind"] == "human":  # the accountable human's answer is shown to every judge (bug B6)
+            if p["ref"] in human.get("denied", ()):
+                bump("BLOCK" if context["stakes"] == "high" else "REWRITE", pid, f"{p['ref']} denied by the accountable human")
+            continue
         if p["kind"] == "claim":
             if p["ref"] in human.get("confirmed", ()):
                 continue

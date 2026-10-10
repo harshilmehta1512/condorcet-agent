@@ -15,6 +15,11 @@
 7. **Human in the loop:** "To: Research lead — <question>". Text box + Submit → runs the agent with `--human` → shows **before → after** side by side (action, status, tally).
 8. **Trace** (collapsible).
 
+## Saved demo states (no live run needed)
+- `decisions/<report>.json` = initial decision (no human answer yet).
+- `decisions/ev_market.after_human.json` (research lead confirms C1 → **BLOCK INFO_GAP → ESCALATE STABLE**) and `decisions/agi_timelines.after_human.json` (COO says C1 is false → **BLOCK INFO_GAP → BLOCK STABLE**) hold the after state with `before` filled. Show them side by side for the before → after; the live Submit button stays optional.
+- Every input report is **transcribed from screenshots** (Ezio had no PDF export); show each file's `source_note` in the header and say it once in the video.
+
 ## Visual rules
 - Every status shows text plus colour.
 - Readable at 1280×720 (video resolution).
@@ -23,7 +28,7 @@
 ## Video script (≈ 1:45)
 | Time | Show | Say |
 |---|---|---|
-| 0:00 | Header | "An analyst wants to put this AI answer on the EV market into a client note. Ezio checked it. Should it go out?" |
+| 0:00 | Header | "An analyst wants to put this AI answer on the EV market into a client note. Ezio checked it (we transcribed Ezio's report from its screen; it has no export). Should it go out?" |
 | 0:12 | Evidence pieces | "Our agent breaks the report into evidence and groups sources by origin." (Mention repeated sources only if real.) |
 | 0:25 | Judge panel grid | "Then, like a random forest, nine AI judges each see a different slice of the evidence. Research shows nine judges seeing the same thing are worth about two votes." |
 | 0:45 | Tally + flip evidence | "The decision splits. Everyone who saw claim 3 says escalate. So the decision depends on claim 3." |

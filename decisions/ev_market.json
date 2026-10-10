@@ -7,9 +7,9 @@
   "stakes": "high",
   "accountable": "Research lead"
  },
- "action": "ESCALATE",
- "status": "STABLE",
- "headline": "Judges agree across different evidence slices (89%) \u2192 ESCALATE.",
+ "action": "BLOCK",
+ "status": "INFO_GAP",
+ "headline": "Every judge who saw C1 agrees \u2192 BLOCK; C1 is the evidence a reviewer must not miss. Asking Research lead to verify it.",
  "evidence": [
   {
    "id": "E1",
@@ -382,12 +382,6 @@
    "kind": "scores",
    "ref": "modules",
    "summary": "Module scores (of 5): accuracy 3, bias 5, tone 5, agreement 5"
-  },
-  {
-   "id": "H1",
-   "kind": "human",
-   "ref": "C1",
-   "summary": "H1 Research lead on C1: \"Confirmed from Geely's 2024 annual report: 1.49 million.\""
   }
  ],
  "panel": {
@@ -403,8 +397,7 @@
     "saw": [
      "E2",
      "E5",
-     "E6",
-     "H1"
+     "E6"
     ],
     "action": "ESCALATE",
     "cited": [
@@ -418,8 +411,7 @@
     "model": "offline-mock",
     "saw": [
      "E2",
-     "E5",
-     "H1"
+     "E5"
     ],
     "action": "ESCALATE",
     "cited": [
@@ -434,8 +426,7 @@
     "saw": [
      "E3",
      "E4",
-     "E6",
-     "H1"
+     "E6"
     ],
     "action": "ESCALATE",
     "cited": [
@@ -449,14 +440,14 @@
     "model": "offline-mock",
     "saw": [
      "E1",
-     "E3",
-     "H1"
-    ],
-    "action": "ESCALATE",
-    "cited": [
      "E3"
     ],
-    "why": "C3 is unverified",
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C1 is contradicted",
     "cached": true
    },
    {
@@ -465,8 +456,7 @@
     "saw": [
      "E4",
      "E5",
-     "E6",
-     "H1"
+     "E6"
     ],
     "action": "APPROVE",
     "cited": [],
@@ -479,8 +469,7 @@
     "saw": [
      "E2",
      "E5",
-     "E6",
-     "H1"
+     "E6"
     ],
     "action": "ESCALATE",
     "cited": [
@@ -495,14 +484,14 @@
     "saw": [
      "E1",
      "E3",
-     "E4",
-     "H1"
+     "E4"
     ],
-    "action": "ESCALATE",
+    "action": "BLOCK",
     "cited": [
+     "E1",
      "E3"
     ],
-    "why": "C3 is unverified",
+    "why": "C1 is contradicted",
     "cached": true
    },
    {
@@ -511,14 +500,14 @@
     "saw": [
      "E1",
      "E3",
-     "E4",
-     "H1"
+     "E4"
     ],
-    "action": "ESCALATE",
+    "action": "BLOCK",
     "cited": [
+     "E1",
      "E3"
     ],
-    "why": "C3 is unverified",
+    "why": "C1 is contradicted",
     "cached": true
    },
    {
@@ -526,37 +515,44 @@
     "model": "offline-mock",
     "saw": [
      "E1",
-     "E2",
-     "H1"
-    ],
-    "action": "ESCALATE",
-    "cited": [
      "E2"
     ],
-    "why": "C2 is unverified",
+    "action": "BLOCK",
+    "cited": [
+     "E1",
+     "E2"
+    ],
+    "why": "C1 is contradicted",
     "cached": true
    }
   ],
   "tally": {
-   "ESCALATE": 8,
+   "ESCALATE": 4,
+   "BLOCK": 4,
    "APPROVE": 1
   },
   "top_action": "ESCALATE",
-  "top_share": 0.889
+  "top_share": 0.444
  },
  "flip_evidence": {
-  "id": "E2",
-  "ref": "C2",
-  "tv": null,
-  "saw_it": {},
-  "didnt": {},
-  "note": "most-cited by escalating judges"
+  "id": "E1",
+  "ref": "C1",
+  "tv": 1.0,
+  "saw_it": {
+   "BLOCK": 4
+  },
+  "didnt": {
+   "ESCALATE": 4,
+   "APPROVE": 1
+  }
  },
  "hard_rules": [
   {
    "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
-   "triggered": false,
-   "evidence": []
+   "triggered": true,
+   "evidence": [
+    "E1"
+   ]
   },
   {
    "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
@@ -572,9 +568,9 @@
   "C5"
  ],
  "baseline": {
-  "action": "ESCALATE",
-  "focus": "C2",
-  "rule": "a claim Ezio could not verify"
+  "action": "BLOCK",
+  "focus": "C1",
+  "rule": "a claim Ezio marked contradicted"
  },
  "panel_adds": {
   "value": false,
@@ -615,22 +611,30 @@
    ]
   },
   {
-   "text": "Panel: {'ESCALATE': 8, 'APPROVE': 1}; top action ESCALATE at 89% (\u2265 70% needed) \u2192 STABLE",
+   "text": "Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE",
    "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "text": "Panel: {'ESCALATE': 4, 'BLOCK': 4, 'APPROVE': 1}; top action ESCALATE at 44% (< 70% needed) \u2192 INFO_GAP",
+   "evidence": [
+    "E1",
     "E2",
     "E3"
    ]
   },
   {
-   "text": "Simple-rule baseline (a claim Ezio could not verify): ESCALATE focusing on C2. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "text": "The split is explained by who was shown C1 (judges who saw it {'BLOCK': 4}, judges who did not {'ESCALATE': 4, 'APPROVE': 1}): an information gap we created by hiding it, not real uncertainty. Decision follows the judges who saw it; C1 is the must-not-miss evidence.",
    "evidence": [
-    "C2"
+    "E1",
+    "C1"
    ]
   },
   {
-   "text": "Research lead confirms C1",
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
    "evidence": [
-    "H1"
+    "C1"
    ]
   }
  ],
@@ -643,23 +647,15 @@
  "human": {
   "to": "Research lead",
   "question": "The decision depends on C1: \"C1 (Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)): Geely Group: 1.49 million new-energy vehicles\". Can you confirm or correct it from a source you trust?",
-  "answer": "Confirmed from Geely's 2024 annual report: 1.49 million."
+  "answer": null
  },
- "before": {
-  "action": "BLOCK",
-  "status": "INFO_GAP",
-  "tally": {
-   "ESCALATE": 4,
-   "BLOCK": 4,
-   "APPROVE": 1
-  }
- },
+ "before": null,
  "trace": [
   "parsed 5 claims, 0 findings",
   "6 evidence pieces; each shown to 4 of 9 judges",
   "panel mode: offline mock",
-  "tally {'ESCALATE': 8, 'APPROVE': 1} \u2192 STABLE",
-  "hard floor: none triggered",
-  "final action: ESCALATE"
+  "tally {'ESCALATE': 4, 'BLOCK': 4, 'APPROVE': 1} \u2192 INFO_GAP",
+  "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
+  "final action: BLOCK"
  ]
 }
