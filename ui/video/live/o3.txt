@@ -1,0 +1,8 @@
+ev_market: REWRITE (STABLE) | tally {'REWRITE': 7, 'PULL_SOURCE': 1} | mode llm
+  Judges agree across different evidence slices (88%) → REWRITE.
+  - C4 lists 6 sources but only 4 independent origin(s) could confirm it (1 published before the period it covers)
+  - C5 lists 6 sources but only 3 independent origin(s) could confirm it (3 published before the period it covers)
+  - C1: Ezio marks it contradicted, but the figure it quotes from its sources matches the claim; the verdict itself needs a human check
+  - Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE
+  - Panel: {'REWRITE': 7, 'PULL_SOURCE': 1}; top action REWRITE at 88% (≥ 70% needed) → STABLE
+  - Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: YES, different action (REWRITE vs rule BLOCK)

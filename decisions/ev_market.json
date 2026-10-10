@@ -385,6 +385,7 @@
   }
  ],
  "panel": {
+  "condition": "subspace",
   "n_judges": 9,
   "n_failed": 0,
   "failed": [],
@@ -392,7 +393,7 @@
   "mode": "offline-mock",
   "votes": [
    {
-    "judge": "gpt-nano",
+    "judge": "gpt-5.4-mini",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -407,7 +408,7 @@
     "cached": true
    },
    {
-    "judge": "gpt-mini",
+    "judge": "claude-haiku-5.5",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -421,7 +422,7 @@
     "cached": true
    },
    {
-    "judge": "haiku",
+    "judge": "gemini-3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E3",
@@ -436,7 +437,7 @@
     "cached": true
    },
    {
-    "judge": "sonnet",
+    "judge": "deepseek-v3.2",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -451,7 +452,7 @@
     "cached": true
    },
    {
-    "judge": "gemini",
+    "judge": "qwen3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E4",
@@ -464,7 +465,7 @@
     "cached": true
    },
    {
-    "judge": "llama",
+    "judge": "mistral-small",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -479,7 +480,7 @@
     "cached": true
    },
    {
-    "judge": "qwen",
+    "judge": "grok-4.1-fast",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -495,7 +496,7 @@
     "cached": true
    },
    {
-    "judge": "mistral",
+    "judge": "glm-5.3-flash",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -511,7 +512,7 @@
     "cached": true
    },
    {
-    "judge": "deepseek",
+    "judge": "kimi-k2.5",
     "model": "offline-mock",
     "saw": [
      "E1",
