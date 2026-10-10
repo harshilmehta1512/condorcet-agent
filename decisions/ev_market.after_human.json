@@ -9,7 +9,7 @@
  },
  "action": "ESCALATE",
  "status": "STABLE",
- "headline": "Judges agree across different evidence slices (89%) \u2192 ESCALATE.",
+ "headline": "Judges agree (89%) with sampled evidence slices \u2192 ESCALATE.",
  "evidence": [
   {
    "id": "E1",
@@ -387,7 +387,7 @@
    "id": "H1",
    "kind": "human",
    "ref": "C1",
-   "summary": "H1 Research lead on C1: \"Confirmed from Geely's 2024 annual report: 1.49 million new-energy vehicles. The claim is correct.\""
+   "summary": "H1 Research lead on C1: \"Confirmed: Geely's 2024 annual report says 1.49 million new-energy vehicles.\""
   }
  ],
  "panel": {
@@ -396,9 +396,10 @@
   "failed": [],
   "r": 4,
   "mode": "offline-mock",
+  "condition": "subspace",
   "votes": [
    {
-    "judge": "gpt-nano",
+    "judge": "gpt-5.4-mini",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -414,7 +415,7 @@
     "cached": true
    },
    {
-    "judge": "gpt-mini",
+    "judge": "claude-haiku-5.5",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -429,7 +430,7 @@
     "cached": true
    },
    {
-    "judge": "haiku",
+    "judge": "gemini-3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E3",
@@ -445,7 +446,7 @@
     "cached": true
    },
    {
-    "judge": "sonnet",
+    "judge": "deepseek-v3.2",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -460,7 +461,7 @@
     "cached": true
    },
    {
-    "judge": "gemini",
+    "judge": "qwen3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E4",
@@ -474,7 +475,7 @@
     "cached": true
    },
    {
-    "judge": "llama",
+    "judge": "mistral-small",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -490,7 +491,7 @@
     "cached": true
    },
    {
-    "judge": "qwen",
+    "judge": "grok-4.1-fast",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -506,7 +507,7 @@
     "cached": true
    },
    {
-    "judge": "mistral",
+    "judge": "glm-5.3-flash",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -522,7 +523,7 @@
     "cached": true
    },
    {
-    "judge": "deepseek",
+    "judge": "kimi-k2.5",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -544,19 +545,14 @@
   "top_action": "ESCALATE",
   "top_share": 0.889
  },
- "flip_evidence": {
-  "id": "E2",
-  "ref": "C2",
-  "tv": null,
-  "saw_it": {},
-  "didnt": {},
-  "note": "most-cited by escalating judges"
- },
+ "flip_evidence": null,
  "hard_rules": [
   {
    "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
-   "triggered": false,
-   "evidence": []
+   "triggered": true,
+   "evidence": [
+    "E1"
+   ]
   },
   {
    "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
@@ -615,6 +611,12 @@
    ]
   },
   {
+   "text": "Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
    "text": "Panel: {'ESCALATE': 8, 'APPROVE': 1}; top action ESCALATE at 89% (\u2265 70% needed) \u2192 STABLE",
    "evidence": [
     "E2",
@@ -628,7 +630,7 @@
    ]
   },
   {
-   "text": "Research lead confirms C1",
+   "text": "Research lead confirms C1; a human statement does not remove the hard-rule floor",
    "evidence": [
     "H1"
    ]
@@ -642,12 +644,13 @@
  ],
  "human": {
   "to": "Research lead",
-  "question": "The decision depends on C1: \"C1 (Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)): Geely Group: 1.49 million new-energy vehicles\". Can you confirm or correct it from a source you trust?",
-  "answer": "Confirmed from Geely's 2024 annual report: 1.49 million new-energy vehicles. The claim is correct."
+  "ref": "C1",
+  "question": "C1 is flagged by the safety rule: \"Geely Group: 1.49 million new-energy vehicles\". Can you confirm or correct it from a source you trust?",
+  "answer": "Confirmed: Geely's 2024 annual report says 1.49 million new-energy vehicles."
  },
  "before": {
-  "action": "BLOCK",
-  "status": "INFO_GAP",
+  "action": "ESCALATE",
+  "status": "FRAGILE",
   "tally": {
    "ESCALATE": 4,
    "BLOCK": 4,
@@ -657,9 +660,10 @@
  "trace": [
   "parsed 5 claims, 0 findings",
   "6 evidence pieces; each shown to 4 of 9 judges",
-  "panel mode: offline mock",
+  "panel mode: simulated judges (rule-based)",
   "tally {'ESCALATE': 8, 'APPROVE': 1} \u2192 STABLE",
-  "hard floor: none triggered",
+  "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
   "final action: ESCALATE"
- ]
+ ],
+ "provenance": null
 }

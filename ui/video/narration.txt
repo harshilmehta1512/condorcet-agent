@@ -1,0 +1,15 @@
+Condorcet turns an AI trust report into an accountable next step. Before, a verdict hid the evidence trail. Now, this simple workspace shows the decision, reason, and reviewer. Inputs were transcribed from Ezio's screens.
+
+In the EV report, Geely's one point four nine million vehicles is marked contradicted, although Ezio quotes the same figure. The agent asks the research lead to check the report itself.
+
+These 9 judges are simulated rules, not AI models. Dark cells show cited evidence. Hard-rule warnings stay separate from the flip search, and a contradicted claim can never be approved.
+
+Here is the saved human update. The lead confirms the figure. Escalation remains, because other claims are unverified, but the panel becomes stable. Human confirmation does not remove the safety floor.
+
+Now Nuclear energy, for an internal policy brief. The same agent returns Pull Source, not approval. 7 simulated judges request another source; 2 suggest rewriting.
+
+Claim C5 lists 6 sources, but four Department of Energy pages share an origin. Six entries become 3 groups. Another independent source is the next step; these groups are heuristic.
+
+We also revalidated saved TokenRouter votes. A malformed, uncited reply had distorted the result. After exclusion, 4 of 5 valid judges choose Rewrite: eighty percent, stable. No new model calls were made.
+
+With full evidence, 6 of 7 valid judges choose Rewrite. Both panels are stable. The five models shared across both runs give identical votes. We do not claim better decisions from hiding evidence. Agreement is not correctness.

@@ -9,7 +9,7 @@
  },
  "action": "BLOCK",
  "status": "STABLE",
- "headline": "Judges agree across different evidence slices (100%) \u2192 BLOCK.",
+ "headline": "Judges agree (100%) with sampled evidence slices \u2192 BLOCK.",
  "evidence": [
   {
    "id": "E1",
@@ -394,7 +394,7 @@
    "id": "H1",
    "kind": "human",
    "ref": "C1",
-   "summary": "H1 Chief Operating Officer on C1: \"Our own support data shows AI resolves about two-thirds of chats, not 100%. The claim is false.\""
+   "summary": "H1 Chief Operating Officer on C1: \"Denied: the claimed 100% resolution and complete elimination of human bottlenecks is false.\""
   }
  ],
  "panel": {
@@ -403,9 +403,10 @@
   "failed": [],
   "r": 4,
   "mode": "offline-mock",
+  "condition": "subspace",
   "votes": [
    {
-    "judge": "gpt-nano",
+    "judge": "gpt-5.4-mini",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -424,7 +425,7 @@
     "cached": true
    },
    {
-    "judge": "gpt-mini",
+    "judge": "claude-haiku-5.5",
     "model": "offline-mock",
     "saw": [
      "E4",
@@ -442,7 +443,7 @@
     "cached": true
    },
    {
-    "judge": "haiku",
+    "judge": "gemini-3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E5",
@@ -460,7 +461,7 @@
     "cached": true
    },
    {
-    "judge": "sonnet",
+    "judge": "deepseek-v3.2",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -480,7 +481,7 @@
     "cached": true
    },
    {
-    "judge": "gemini",
+    "judge": "qwen3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -499,7 +500,7 @@
     "cached": true
    },
    {
-    "judge": "llama",
+    "judge": "mistral-small",
     "model": "offline-mock",
     "saw": [
      "E3",
@@ -518,7 +519,7 @@
     "cached": true
    },
    {
-    "judge": "qwen",
+    "judge": "grok-4.1-fast",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -537,7 +538,7 @@
     "cached": true
    },
    {
-    "judge": "mistral",
+    "judge": "glm-5.3-flash",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -555,7 +556,7 @@
     "cached": true
    },
    {
-    "judge": "deepseek",
+    "judge": "kimi-k2.5",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -697,7 +698,7 @@
    ]
   },
   {
-   "text": "Chief Operating Officer denies C1",
+   "text": "Chief Operating Officer denies C1; a human statement does not remove the hard-rule floor",
    "evidence": [
     "H1"
    ]
@@ -706,11 +707,12 @@
  "unchecked": [],
  "human": {
   "to": "Chief Operating Officer",
-  "question": "The decision depends on C1: \"C1 (Contradicted: amount (sources say two-thirds of chats and cut resolution time from 11 minutes to under 2)): They drive resolution rates to 100% and complete\". Can you confirm or correct it from a source you trust?",
-  "answer": "Our own support data shows AI resolves about two-thirds of chats, not 100%. The claim is false."
+  "ref": "C1",
+  "question": "C1 is flagged by the safety rule: \"They drive resolution rates to 100% and completely eliminate human bottlenecks, delivering flawless, zero-latency customer experiences round the clock.\". Can you confirm or correct it from a source you trust?",
+  "answer": "Denied: the claimed 100% resolution and complete elimination of human bottlenecks is false."
  },
  "before": {
-  "action": "BLOCK",
+  "action": "ESCALATE",
   "status": "INFO_GAP",
   "tally": {
    "BLOCK": 4,
@@ -720,9 +722,10 @@
  "trace": [
   "parsed 5 claims, 1 findings",
   "7 evidence pieces; each shown to 4 of 9 judges",
-  "panel mode: offline mock",
+  "panel mode: simulated judges (rule-based)",
   "tally {'BLOCK': 9} \u2192 STABLE",
   "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
   "final action: BLOCK"
- ]
+ ],
+ "provenance": null
 }

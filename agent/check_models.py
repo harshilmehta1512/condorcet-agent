@@ -21,7 +21,7 @@ def list_models():
         for i in ids:
             print("  ", i)
     else:
-        print(r.text[:400])
+        print("Model listing failed; check authentication or provider availability.")
 
 
 async def ping():

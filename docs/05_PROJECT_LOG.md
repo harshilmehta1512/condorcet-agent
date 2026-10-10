@@ -72,6 +72,16 @@ Update after every completed task (rule F1). Last updated: **2:56 PM PT**. Saved
 | B1 | 1:42 | Low-stakes test named the module scores as flip evidence | Flip search used co-occurrence only; by chance, judges who saw the scores didn't see C1 | Only pieces some judge actually cited are flip candidates | Fixed |
 
 ## 5. Done
+
+### Codex UI delivery — October 10, 2026
+- Consolidated correction and video: provider-qualified model IDs confirmed 9/9 through the free catalog; added full-evidence support and strict historical vote replay. Regenerated all four reports and human snapshots from code, excluding hard-rule pieces from the flip search. Historical real EV results now both recommend REWRITE/STABLE: 4/5 and 6/7 valid votes; the five shared models give identical votes. 26 checks pass. Captured the corrected UI for a short narrated screenshot walkthrough, with Nuclear over 20 seconds, no new inference, and transparent synthetic-voice/saved-data labeling. Current details are in `07_SUBMISSION_READY.md`.
+- Follow-up simplification: the default screen now shows the decision in plain language, one key reason, and the human's next step. Removed the summary-card row and repeated action/status badges; detailed evidence, judge votes, baseline, and audit are collapsed. Buddy and guided progress are optional, collapsed, and off by default. Saved before/after examples are expandable. The human outcome starts at “Still unsure.”
+- Latest GitHub checkout `97371ac` fetched into `upstream/`; original downloaded copy preserved. Key configuration copied into ignored `.env` without logging credentials.
+- Professional local Streamlit UI implemented, using real report artifacts and saved human states. BuddyV/MockingIt PNG reused for an optional text-only animated guide and four-step review progression.
+- Fixed the human-confirmation safety-floor bypass, invalid/uncited model reply handling, unresolved-answer mapping, explicit H1 targeting, misleading same-evidence/unanimity wording, and active report-path UTF-8 I/O. UI answers run offline in an isolated cache directory.
+- Twenty automated checks passed, including four-report rendering, repeatability, reference integrity, safety, and isolated UI human submission. Browser QA performed at 1280×720. Detailed review, remaining model/flip-search limitations, and tools disclosure are in `06_CODEX_REVIEW.md`.
+- No inference calls, deployment, or GitHub push. Saved parsed inputs and decisions were not hand-edited.
+
 | ID | Task | Finished |
 |---|---|---|
 | T0 | Read official track specs; cloned starter repos | 1:17 |

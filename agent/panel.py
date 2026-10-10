@@ -11,17 +11,22 @@ CACHE = Path(os.environ.get("CONDORCET_CACHE", ROOT / "cache"))
 
 _env = ROOT / ".env"
 if _env.exists():
-    for _line in _env.read_text().splitlines():
+    for _line in _env.read_text(encoding="utf-8").splitlines():
         if "=" in _line and not _line.lstrip().startswith("#"):
             _k, _v = _line.split("=", 1)
             os.environ.setdefault(_k.strip(), _v.strip().strip('"'))
 
 # short name -> TokenRouter model id. Fill/confirm at T2; keep >= 5 families.
 JUDGES = {
-    "gpt-nano": "gpt-5.4-nano", "gpt-mini": "gpt-5.4-mini",
-    "haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5",
-    "gemini": "gemini-flash-latest", "llama": "llama-latest", "qwen": "qwen-latest",
-    "mistral": "mistral-small-latest", "deepseek": "deepseek-chat",
+    "gpt-5.4-mini": "openai/gpt-5.4-mini",
+    "claude-haiku-5.5": "anthropic/claude-haiku-5.5",
+    "gemini-3.5-flash": "google/gemini-3.5-flash",
+    "deepseek-v3.2": "deepseek/deepseek-v3.2",
+    "qwen3.5-flash": "qwen/qwen3.5-flash",
+    "mistral-small": "mistralai/mistral-small-2603",
+    "grok-4.1-fast": "x-ai/grok-4.1-fast",
+    "glm-5.3-flash": "z-ai/glm-5.3-flash",
+    "kimi-k2.5": "moonshotai/kimi-k2.5",
 }
 
 PROMPT = """You are one member of a review panel deciding what should happen next with an AI-generated answer.
@@ -37,7 +42,7 @@ A verification tool (Ezio) produced a trust report. You are shown ONLY these pie
 Choose exactly one next action:
 APPROVE (safe to use as is), REWRITE (fix or hedge specific sentences), PULL_SOURCE (get another independent source first),
 ESCALATE (an accountable human must decide), BLOCK (must not be used).
-Base your choice only on the evidence shown. Evidence marked [H1] is a statement from the accountable human; treat it as authoritative for the claim it names. Note how many INDEPENDENT origins back each claim, not how many sources are listed.
+Base your choice only on the evidence shown. Evidence marked [H1] is an attributed statement from the accountable human; weigh its named source and limitations, rather than treating it as automatically authoritative. Note how many INDEPENDENT origins back each claim, not how many sources are listed.
 Reply with JSON only: {{"action": "...", "cited": ["E1", ...], "why": "one sentence"}}"""
 
 
@@ -51,16 +56,21 @@ def build_prompt(parsed, context, pieces_by_id, seen, evidence_text):
 def parse_vote(text, seen):
     m = re.search(r"\{.*\}", text or "", re.S)
     try:
-        d = json.loads(m.group(0)) if m else {}
+        d = json.loads(m.group(0)) if m else None
     except json.JSONDecodeError:
-        d = {}
+        raise ValueError("Judge reply is not valid JSON") from None
+    if not isinstance(d, dict):
+        raise ValueError("Judge reply must be a JSON object")
     action = str(d.get("action", "")).upper().strip()
     if action not in ("APPROVE", "REWRITE", "PULL_SOURCE", "ESCALATE", "BLOCK"):
-        hit = re.search(r"APPROVE|REWRITE|PULL_SOURCE|ESCALATE|BLOCK", (text or "").upper())
-        action = hit.group(0) if hit else "ESCALATE"  # unparseable -> conservative, logged in `why`
-        d.setdefault("why", "unparseable reply; defaulted to ESCALATE")
-    cited = [c for c in d.get("cited", []) if c in seen]
-    return action, cited, str(d.get("why", ""))[:300]
+        raise ValueError("Judge reply has no valid action")
+    cited = d.get("cited")
+    if not isinstance(cited, list) or not cited or any(not isinstance(c, str) or c not in seen for c in cited):
+        raise ValueError("Judge reply must cite evidence it was shown")
+    why = d.get("why")
+    if not isinstance(why, str) or not why.strip():
+        raise ValueError("Judge reply must explain its vote")
+    return action, list(dict.fromkeys(cited)), why[:300]
 
 
 # ---------- offline mock (docs/03 §3 row 12) ----------
@@ -122,16 +132,17 @@ async def _call(client, model, prompt):
     for attempt in range(4):
         try:
             async with _SEM:
+                await _throttle()
                 r = await client.post(f"{base}/chat/completions", headers=headers,
                                       json={"model": model, "messages": [{"role": "user", "content": prompt}],
                                             **bodies[variant]})
             if r.status_code in (401, 402, 403, 404):  # auth / credit / unknown model: retrying won't help
-                return None, False, f"HTTP {r.status_code}: {r.text[:200]}"
+                return None, False, f"HTTP {r.status_code} (authentication, credit, or model error)"
             if r.status_code == 400 and variant == 0:  # likely rejects temperature/max_tokens: use reasoning params
-                variant, err = 1, f"HTTP 400: {r.text[:200]}"
+                variant, err = 1, "HTTP 400: retrying with reasoning-model parameters"
                 continue
             if r.status_code >= 400:  # 429 / 5xx: back off and retry
-                err = f"HTTP {r.status_code}: {r.text[:200]}"
+                err = f"HTTP {r.status_code}"
                 await asyncio.sleep(2 * (attempt + 1))
                 continue
             text = _content(r.json())
@@ -148,12 +159,26 @@ async def _call(client, model, prompt):
 
 
 _SEM = None
+_LOCK = None
+_LAST = 0.0
+MIN_GAP_S = 4.2
+
+
+async def _throttle():
+    global _LAST
+    async with _LOCK:
+        now = asyncio.get_running_loop().time()
+        wait = _LAST + MIN_GAP_S - now
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _LAST = asyncio.get_running_loop().time()
 
 
 async def run_llm_panel(prompts):
-    global _SEM
+    global _SEM, _LOCK, _LAST
     import httpx
     _SEM = asyncio.Semaphore(4)  # at most 4 calls in flight
+    _LOCK, _LAST = asyncio.Lock(), 0.0
     async with httpx.AsyncClient(timeout=90) as client:
         return await asyncio.gather(*(_call(client, JUDGES[j], p) for j, p in prompts.items()))
 

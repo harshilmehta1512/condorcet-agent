@@ -1,0 +1,117 @@
+1
+00:00:00,000 --> 00:00:05,007
+Condorcet turns an AI trust report into an accountable next
+step. Before,
+
+2
+00:00:05,007 --> 00:00:10,014
+a verdict hid the evidence trail. Now, this simple workspace
+shows the
+
+3
+00:00:10,014 --> 00:00:15,022
+decision, reason, and reviewer. Inputs were transcribed from
+Ezio's screens.
+
+4
+00:00:15,022 --> 00:00:18,738
+In the EV report, Geely's one point four nine million vehicles
+is
+
+5
+00:00:18,738 --> 00:00:22,454
+marked contradicted, although Ezio quotes the same figure. The
+agent asks the
+
+6
+00:00:22,454 --> 00:00:26,171
+research lead to check the report itself.
+
+7
+00:00:26,171 --> 00:00:30,294
+These 9 judges are simulated rules, not AI models. Dark cells
+show
+
+8
+00:00:30,294 --> 00:00:34,417
+cited evidence. Hard-rule warnings stay separate from the flip
+search, and a
+
+9
+00:00:34,417 --> 00:00:38,540
+contradicted claim can never be approved.
+
+10
+00:00:38,540 --> 00:00:43,067
+Here is the saved human update. The lead confirms the figure.
+Escalation
+
+11
+00:00:43,067 --> 00:00:47,594
+remains, because other claims are unverified, but the panel
+becomes stable. Human
+
+12
+00:00:47,594 --> 00:00:52,122
+confirmation does not remove the safety floor.
+
+13
+00:00:52,122 --> 00:00:56,184
+Now Nuclear energy, for an internal policy brief. The same agent
+returns
+
+14
+00:00:56,184 --> 00:01:00,247
+Pull Source, not approval. 7 simulated judges request another
+source; 2 suggest
+
+15
+00:01:00,247 --> 00:01:04,309
+rewriting.
+
+16
+00:01:04,309 --> 00:01:08,529
+Claim C5 lists 6 sources, but four Department of Energy pages
+share
+
+17
+00:01:08,529 --> 00:01:12,748
+an origin. Six entries become 3 groups. Another independent
+source is the
+
+18
+00:01:12,748 --> 00:01:16,968
+next step; these groups are heuristic.
+
+19
+00:01:16,968 --> 00:01:22,144
+We also revalidated saved TokenRouter votes. A malformed,
+uncited reply had distorted
+
+20
+00:01:22,144 --> 00:01:27,320
+the result. After exclusion, 4 of 5 valid judges choose Rewrite:
+eighty
+
+21
+00:01:27,320 --> 00:01:32,497
+percent, stable. No new model calls were made.
+
+22
+00:01:32,497 --> 00:01:36,391
+With full evidence, 6 of 7 valid judges choose Rewrite. Both
+panels
+
+23
+00:01:36,391 --> 00:01:40,286
+are stable. The five models shared across both runs give
+identical votes.
+
+24
+00:01:40,286 --> 00:01:44,180
+We do not claim better decisions from hiding evidence. Agreement
+is not
+
+25
+00:01:44,180 --> 00:01:48,075
+correctness.

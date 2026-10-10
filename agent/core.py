@@ -3,6 +3,7 @@ import math
 import random
 import re
 from collections import Counter
+from datetime import date
 
 ACTIONS = ("APPROVE", "REWRITE", "PULL_SOURCE", "ESCALATE", "BLOCK")
 STRICTNESS = {a: i for i, a in enumerate(ACTIONS)}  # higher = stricter
@@ -23,9 +24,7 @@ def _jaccard(a, b):
 
 def _days(d1, d2):
     try:
-        y1, m1, a1 = map(int, d1[:10].split("-"))
-        y2, m2, a2 = map(int, d2[:10].split("-"))
-        return abs((y1 * 372 + m1 * 31 + a1) - (y2 * 372 + m2 * 31 + a2))
+        return abs((date.fromisoformat(d1[:10]) - date.fromisoformat(d2[:10])).days)
     except (ValueError, AttributeError, TypeError):
         return None
 
@@ -134,19 +133,21 @@ def tally(votes):
     return Counter(v["action"] for v in votes)
 
 
-def flip_evidence(votes, pieces):
+def flip_evidence(votes, pieces, excluded=()):
     """Piece whose presence best separates the judges' actions (total-variation distance)."""
     best = None
     # Only pieces some judge actually cited: co-occurrence alone can blame a piece nobody used (bug B1).
     cited = {c for v in votes for c in v.get("cited", [])}
-    for p in [p for p in pieces if p["id"] in cited] or pieces:
+    for p in pieces:
+        if p["id"] not in cited or p["id"] in excluded:
+            continue
         saw = Counter(v["action"] for v in votes if p["id"] in v["saw"])
         didnt = Counter(v["action"] for v in votes if p["id"] not in v["saw"])
         if not saw or not didnt:
             continue
         ns, nd = sum(saw.values()), sum(didnt.values())
         tv = 0.5 * sum(abs(saw[a] / ns - didnt[a] / nd) for a in ACTIONS)
-        if best is None or tv > best["tv"]:
+        if tv > 0 and (best is None or tv > best["tv"]):
             best = {"id": p["id"], "ref": p["ref"], "tv": round(tv, 3), "saw_it": dict(saw), "didnt": dict(didnt)}
     return best
 
@@ -156,11 +157,10 @@ def hard_floor(pieces, load_bearing_refs, human_overrides):
     """Code-level minimum strictness. Returns (min_action, rules list)."""
     rules = []
     contra = [p for p in pieces if p["kind"] == "claim" and p["ref"] in load_bearing_refs
-              and re.search(r"contradict|refut|false", p["verdict"], re.I) and p["ref"] not in human_overrides]
+              and re.search(r"contradict|refut|false", p["verdict"], re.I)]
     rules.append({"rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
                   "triggered": bool(contra), "evidence": [p["id"] for p in contra]})
-    crit = [p for p in pieces if p["kind"] == "finding" and p.get("severity", "").upper() == "CRITICAL"
-            and p["ref"] not in human_overrides]
+    crit = [p for p in pieces if p["kind"] == "finding" and p.get("severity", "").upper() == "CRITICAL"]
     rules.append({"rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
                   "triggered": bool(crit), "evidence": [p["id"] for p in crit]})
     floor = "REWRITE" if (contra or crit) else "APPROVE"
@@ -194,11 +194,14 @@ def rule_baseline(pieces, context, human_overrides=()):
 
 def decide(votes, pieces, context, load_bearing_refs, human_overrides=()):
     """STABLE: >= 70% agree. INFO_GAP: the split is explained by who was shown one piece (we created it by
-    hiding evidence), so follow the judges who saw it. FRAGILE: judges who saw the same evidence still disagree."""
+    hiding evidence), so follow the judges who saw it. FRAGILE: the split is not explained by this exposure test.
+    Exposure groups may differ on other pieces too; this is an association, not a causal test."""
     t = tally(votes)
     top, k = t.most_common(1)[0]
     share = k / len(votes)
-    flip = None if share >= STABLE_SHARE else flip_evidence(votes, pieces)
+    floor, rules = hard_floor(pieces, load_bearing_refs, set(human_overrides))
+    ruled = {eid for rule in rules if rule["triggered"] for eid in rule["evidence"]}
+    flip = None if share >= STABLE_SHARE else flip_evidence(votes, pieces, excluded=ruled)
     if share >= STABLE_SHARE:
         status, action = "STABLE", top
     elif flip and _top_share(Counter(flip["saw_it"])) >= INFO_GAP_SHARE and _top_share(Counter(flip["didnt"])) >= INFO_GAP_SHARE:
@@ -207,7 +210,6 @@ def decide(votes, pieces, context, load_bearing_refs, human_overrides=()):
     else:
         status = "FRAGILE"
         action = "ESCALATE" if context.get("stakes", "high") == "high" else "REWRITE"
-    floor, rules = hard_floor(pieces, load_bearing_refs, set(human_overrides))
     if STRICTNESS[floor] > STRICTNESS[action]:
         action = floor
     base = rule_baseline(pieces, context, set(human_overrides))

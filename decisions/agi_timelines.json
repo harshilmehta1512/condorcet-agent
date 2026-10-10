@@ -7,9 +7,9 @@
   "stakes": "high",
   "accountable": "Chief Operating Officer"
  },
- "action": "BLOCK",
+ "action": "ESCALATE",
  "status": "INFO_GAP",
- "headline": "Every judge who saw C1 agrees \u2192 BLOCK; C1 is the evidence a reviewer must not miss. Asking Chief Operating Officer to verify it.",
+ "headline": "Votes differ by exposure to modules \u2192 ESCALATE; check this association and the flagged evidence. Asking Chief Operating Officer to verify it.",
  "evidence": [
   {
    "id": "E1",
@@ -397,9 +397,10 @@
   "failed": [],
   "r": 4,
   "mode": "offline-mock",
+  "condition": "subspace",
   "votes": [
    {
-    "judge": "gpt-nano",
+    "judge": "gpt-5.4-mini",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -416,7 +417,7 @@
     "cached": true
    },
    {
-    "judge": "gpt-mini",
+    "judge": "claude-haiku-5.5",
     "model": "offline-mock",
     "saw": [
      "E4",
@@ -432,7 +433,7 @@
     "cached": true
    },
    {
-    "judge": "haiku",
+    "judge": "gemini-3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E5",
@@ -448,7 +449,7 @@
     "cached": true
    },
    {
-    "judge": "sonnet",
+    "judge": "deepseek-v3.2",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -466,7 +467,7 @@
     "cached": true
    },
    {
-    "judge": "gemini",
+    "judge": "qwen3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -483,7 +484,7 @@
     "cached": true
    },
    {
-    "judge": "llama",
+    "judge": "mistral-small",
     "model": "offline-mock",
     "saw": [
      "E3",
@@ -500,7 +501,7 @@
     "cached": true
    },
    {
-    "judge": "qwen",
+    "judge": "grok-4.1-fast",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -517,7 +518,7 @@
     "cached": true
    },
    {
-    "judge": "mistral",
+    "judge": "glm-5.3-flash",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -533,7 +534,7 @@
     "cached": true
    },
    {
-    "judge": "deepseek",
+    "judge": "kimi-k2.5",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -558,14 +559,15 @@
   "top_share": 0.556
  },
  "flip_evidence": {
-  "id": "E1",
-  "ref": "C1",
-  "tv": 1.0,
+  "id": "E6",
+  "ref": "modules",
+  "tv": 0.8,
   "saw_it": {
-   "BLOCK": 4
+   "ESCALATE": 4
   },
   "didnt": {
-   "ESCALATE": 5
+   "BLOCK": 4,
+   "ESCALATE": 1
   }
  },
  "hard_rules": [
@@ -595,8 +597,8 @@
   "rule": "a claim Ezio marked contradicted"
  },
  "panel_adds": {
-  "value": false,
-  "detail": "same action and focus as the simple rule"
+  "value": true,
+  "detail": "different action (ESCALATE vs rule BLOCK); different focus (modules vs rule C1)"
  },
  "reasons": [
   {
@@ -677,14 +679,14 @@
    ]
   },
   {
-   "text": "The split is explained by who was shown C1 (judges who saw it {'BLOCK': 4}, judges who did not {'ESCALATE': 5}): an information gap we created by hiding it, not real uncertainty. Decision follows the judges who saw it; C1 is the must-not-miss evidence.",
+   "text": "Votes are associated with exposure to modules (shown {'ESCALATE': 4}, not shown {'BLOCK': 4, 'ESCALATE': 1}). The exposure groups may differ on other evidence; this does not establish cause.",
    "evidence": [
-    "E1",
-    "C1"
+    "E6",
+    "modules"
    ]
   },
   {
-   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: YES, different action (ESCALATE vs rule BLOCK); different focus (modules vs rule C1)",
    "evidence": [
     "C1"
    ]
@@ -693,16 +695,18 @@
  "unchecked": [],
  "human": {
   "to": "Chief Operating Officer",
-  "question": "The decision depends on C1: \"C1 (Contradicted: amount (sources say two-thirds of chats and cut resolution time from 11 minutes to under 2)): They drive resolution rates to 100% and complete\". Can you confirm or correct it from a source you trust?",
+  "ref": "C1",
+  "question": "C1 is flagged by the safety rule: \"They drive resolution rates to 100% and completely eliminate human bottlenecks, delivering flawless, zero-latency customer experiences round the clock.\". Can you confirm or correct it from a source you trust?",
   "answer": null
  },
  "before": null,
  "trace": [
   "parsed 5 claims, 1 findings",
   "7 evidence pieces; each shown to 4 of 9 judges",
-  "panel mode: offline mock",
+  "panel mode: simulated judges (rule-based)",
   "tally {'BLOCK': 4, 'ESCALATE': 5} \u2192 INFO_GAP",
   "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
-  "final action: BLOCK"
- ]
+  "final action: ESCALATE"
+ ],
+ "provenance": null
 }

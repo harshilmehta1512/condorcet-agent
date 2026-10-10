@@ -1,0 +1,37 @@
+{
+  "subspace": {
+    "n_judges": 5,
+    "tally": {
+      "REWRITE": 4,
+      "PULL_SOURCE": 1
+    },
+    "top_share": 0.8,
+    "n_failed": 4
+  },
+  "full_evidence": {
+    "n_judges": 7,
+    "tally": {
+      "REWRITE": 6,
+      "PULL_SOURCE": 1
+    },
+    "top_share": 0.857,
+    "n_failed": 2
+  },
+  "matched_models": [
+    "anthropic/claude-haiku-5.5",
+    "deepseek/deepseek-v3.2",
+    "openai/gpt-5.4-mini",
+    "qwen/qwen3.5-flash",
+    "x-ai/grok-4.1-fast"
+  ],
+  "matched_subspace_tally": {
+    "REWRITE": 4,
+    "PULL_SOURCE": 1
+  },
+  "matched_full_evidence_tally": {
+    "REWRITE": 4,
+    "PULL_SOURCE": 1
+  },
+  "conclusion": "Both validated panels recommend REWRITE and are STABLE. Valid-answer model rosters differ; this does not establish that hiding evidence caused a change or improved decision quality.",
+  "new_api_calls": 0
+}

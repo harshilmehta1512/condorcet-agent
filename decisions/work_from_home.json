@@ -9,7 +9,7 @@
  },
  "action": "ESCALATE",
  "status": "STABLE",
- "headline": "Judges agree across different evidence slices (100%) \u2192 ESCALATE.",
+ "headline": "Judges agree (100%) with sampled evidence slices \u2192 ESCALATE.",
  "evidence": [
   {
    "id": "E1",
@@ -364,9 +364,10 @@
   "failed": [],
   "r": 4,
   "mode": "offline-mock",
+  "condition": "subspace",
   "votes": [
    {
-    "judge": "gpt-nano",
+    "judge": "gpt-5.4-mini",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -382,7 +383,7 @@
     "cached": true
    },
    {
-    "judge": "gpt-mini",
+    "judge": "claude-haiku-5.5",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -396,7 +397,7 @@
     "cached": true
    },
    {
-    "judge": "haiku",
+    "judge": "gemini-3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E3",
@@ -413,7 +414,7 @@
     "cached": true
    },
    {
-    "judge": "sonnet",
+    "judge": "deepseek-v3.2",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -428,7 +429,7 @@
     "cached": true
    },
    {
-    "judge": "gemini",
+    "judge": "qwen3.5-flash",
     "model": "offline-mock",
     "saw": [
      "E4",
@@ -444,7 +445,7 @@
     "cached": true
    },
    {
-    "judge": "llama",
+    "judge": "mistral-small",
     "model": "offline-mock",
     "saw": [
      "E2",
@@ -460,7 +461,7 @@
     "cached": true
    },
    {
-    "judge": "qwen",
+    "judge": "grok-4.1-fast",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -477,7 +478,7 @@
     "cached": true
    },
    {
-    "judge": "mistral",
+    "judge": "glm-5.3-flash",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -494,7 +495,7 @@
     "cached": true
    },
    {
-    "judge": "deepseek",
+    "judge": "kimi-k2.5",
     "model": "offline-mock",
     "saw": [
      "E1",
@@ -515,14 +516,7 @@
   "top_action": "ESCALATE",
   "top_share": 1.0
  },
- "flip_evidence": {
-  "id": "E2",
-  "ref": "C2",
-  "tv": null,
-  "saw_it": {},
-  "didnt": {},
-  "note": "most-cited by escalating judges"
- },
+ "flip_evidence": null,
  "hard_rules": [
   {
    "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
@@ -597,16 +591,18 @@
  "unchecked": [],
  "human": {
   "to": "Head of communications",
-  "question": "All judges escalate; the most-cited reason is C2: \"C2 (Not enough evidence): Remote-first teams can design work around deep focus, async communication, and written clarity.\". Can you confirm it, or should we cut it?",
+  "ref": "C2",
+  "question": "The most-cited escalation reason is C2: \"C2 (Not enough evidence): Remote-first teams can design work around deep focus, async communication, and written clarity.\". Can you confirm it, or should we cut it?",
   "answer": null
  },
  "before": null,
  "trace": [
   "parsed 5 claims, 0 findings",
   "6 evidence pieces; each shown to 4 of 9 judges",
-  "panel mode: offline mock",
+  "panel mode: simulated judges (rule-based)",
   "tally {'ESCALATE': 9} \u2192 STABLE",
   "hard floor: none triggered",
   "final action: ESCALATE"
- ]
+ ],
+ "provenance": null
 }

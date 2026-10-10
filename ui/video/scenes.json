@@ -1,0 +1,58 @@
+[
+  {
+    "image": "01_ev_overview.jpg",
+    "title": "Before: a verdict. Now: an accountable next step.",
+    "minimum": 11,
+    "takeaway": "Decision → reason → accountable reviewer",
+    "say": "Condorcet turns an AI trust report into an accountable next step. Before, a verdict hid the evidence trail. Now, this simple workspace shows the decision, reason, and reviewer. Inputs were transcribed from Ezio's screens."
+  },
+  {
+    "image": "02_ev_evidence.jpg",
+    "title": "EV market · question the evidence, including Ezio",
+    "minimum": 10,
+    "takeaway": "C1: the quoted figure matches the claim, but the verdict contradicts it",
+    "say": "In the EV report, Geely's one point four nine million vehicles is marked contradicted, although Ezio quotes the same figure. The agent asks the research lead to check the report itself."
+  },
+  {
+    "image": "03_ev_judges.jpg",
+    "title": "Different evidence views · clearly labeled simulation",
+    "minimum": 10,
+    "takeaway": "Hard rules stay separate from the flip search",
+    "say": "These 9 judges are simulated rules, not AI models. Dark cells show cited evidence. Hard-rule warnings stay separate from the flip search, and a contradicted claim can never be approved."
+  },
+  {
+    "image": "04_ev_human.jpg",
+    "title": "Human in the loop · a saved, traceable update",
+    "minimum": 11,
+    "takeaway": "ESCALATE / FRAGILE → ESCALATE / STABLE",
+    "say": "Here is the saved human update. The lead confirms the figure. Escalation remains, because other claims are unverified, but the panel becomes stable. Human confirmation does not remove the safety floor."
+  },
+  {
+    "image": "05_nuclear_overview.jpg",
+    "title": "Second report · a different, sensible action",
+    "minimum": 11,
+    "takeaway": "Nuclear energy → PULL_SOURCE / STABLE",
+    "say": "Now Nuclear energy, for an internal policy brief. The same agent returns Pull Source, not approval. 7 simulated judges request another source; 2 suggest rewriting."
+  },
+  {
+    "image": "06_nuclear_sources.jpg",
+    "title": "Nuclear C5 · count origins, not repeated entries",
+    "minimum": 11,
+    "takeaway": "6 source entries → 3 usable origin groups",
+    "say": "Claim C5 lists 6 sources, but four Department of Energy pages share an origin. Six entries become 3 groups. Another independent source is the next step; these groups are heuristic."
+  },
+  {
+    "image": "07_real_slices.jpg",
+    "title": "Saved real-model votes · corrected validation",
+    "minimum": 12,
+    "takeaway": "4/5 REWRITE · 80% agreement · STABLE",
+    "say": "We also revalidated saved TokenRouter votes. A malformed, uncited reply had distorted the result. After exclusion, 4 of 5 valid judges choose Rewrite: eighty percent, stable. No new model calls were made."
+  },
+  {
+    "image": "08_real_full.jpg",
+    "title": "Full evidence · report what the comparison actually shows",
+    "minimum": 13,
+    "takeaway": "6/7 REWRITE · matched models give identical votes · no superiority claim",
+    "say": "With full evidence, 6 of 7 valid judges choose Rewrite. Both panels are stable. The five models shared across both runs give identical votes. We do not claim better decisions from hiding evidence. Agreement is not correctness."
+  }
+]
