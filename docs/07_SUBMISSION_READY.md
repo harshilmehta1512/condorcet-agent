@@ -54,4 +54,4 @@ Condorcet turns Ezio's claim verdicts, scores, findings, and sources into a trac
 
 Claude was used for earlier backend work, and Codex for review, corrections, UI, verification, and video preparation. The morning's small balanced-partition and n_eff statistics utilities were reused as already recorded. Buddy artwork is reused unchanged from the user's MockingIt project and is optional. Windows SAPI provides synthetic narration; Pillow and FFmpeg assemble the screenshot walkthrough. Inputs are screenshot transcriptions with approximate scores disclosed. The default demo and human reruns use simulated rules; historical TokenRouter votes are separately labeled.
 
-The source and video are local artifacts. They have not been pushed to GitHub or submitted to the buildathon by this chat.
+The corrected source and video are included in this GitHub repository. The app runs locally; no hosted deployment or buildathon submission has been performed by this chat.
