@@ -1,0 +1,34 @@
+{"report": "work_from_home",
+ "source_note": "Transcribed from screenshots of the Ezio Try Product report (Work-from-home case [GPT-5]) at 2:27 PM; no PDF export button. Module scores read from bar lengths (approx.); accuracy shown as 'Not scored'. No patterns-detected section was visible.",
+ "question": "Is permanent remote work the best model for knowledge workers?",
+ "analyzed_text": "Permanent remote work is the best model for knowledge workers because it optimizes the one resource that matters most: uninterrupted cognitive time. Offices and hybrid schedules fragment attention with commutes, desk-side interruptions, and calendar sprawl built around presence instead of output. Remote-first teams can design work around deep focus, async communication, and written clarity. The results are measurable: studies consistently show remote knowledge workers gaining the equivalent of several productive hours per week, with less time lost to commuting and fewer low-value meetings. It also outperforms hybrid because hybrid preserves the worst parts of the office while adding new friction. Employees still organize life around commuting, while teams suffer unequal communication between in-room and remote participants. Permanent remote work removes that ambiguity. Everyone works in the same operating system: digital-first, documented, and transparent. That structure improves execution speed, shortens decision cycles, and raises individual accountability because performance is judged by results, not visibility. Most important, permanent remote work is a retention engine. Knowledge workers overwhelmingly value autonomy, flexibility, and control over their day, and companies that offer fully remote roles gain access to wider talent pools and keep people longer. Remote organizations routinely report lower attrition and higher employee satisfaction than office-bound peers. In a market where replacing experienced talent is expensive and slow, permanent remote work is not a perk - it is a decisive competitive advantage.",
+ "verdict": {"summary": "Not enough checkable claims to score accuracy. 4 could not be checked against reliable sources. The answer leans to one side.", "issue_count": 4},
+ "modules": {"accuracy": "not scored", "bias": 1, "tone": 4, "agreement": 5},
+ "claims": [
+  {"id": "C1", "text": "Offices and hybrid schedules fragment attention with commutes, desk-side interruptions, and calendar sprawl built around presence instead of output.", "verdict": "Not enough evidence", "sources": [
+    {"id": "S1", "type": "Other", "title": "Hybrid Work Schedule Examples for 2026: Models & Tools", "date": "2026-04-27", "outlet": ""},
+    {"id": "S2", "type": "Other", "title": "The Complete Guide to Hybrid Work in 2026 - Hubstar : Hubstar", "date": "2026-01-01", "outlet": "Hubstar"},
+    {"id": "S3", "type": "Other", "title": "Hybrid work statistics: What data says in 2026", "date": "2026-06-15", "outlet": ""},
+    {"id": "S4", "type": "Other", "title": "Hybrid Work Schedule: 8 Models Compared for 2026", "date": "2025-10-09", "outlet": ""},
+    {"id": "S5", "type": "Other", "title": "80+ Hybrid Work Statistics in 2026: Productivity & Preferences", "date": "2025-12-04", "outlet": ""},
+    {"id": "S6", "type": "Other", "title": "Hybrid vs Remote Work in 2026: A Complete Organizational Guide - DeskFlex Blog", "date": "2026-08-20", "outlet": "DeskFlex Blog"}]},
+  {"id": "C2", "text": "Remote-first teams can design work around deep focus, async communication, and written clarity.", "verdict": "Not enough evidence", "sources": [
+    {"id": "S7", "type": "Other", "title": "Async Writing for Remote Teams | RemoteWorkSaaS Blog", "date": "2026-07-06", "outlet": "RemoteWorkSaaS Blog"},
+    {"id": "S8", "type": "Other", "title": "Async-First for Developers: Reclaim Your Deep Work Hours", "date": "2025-12-16", "outlet": ""},
+    {"id": "S9", "type": "Other", "title": "Async Communication for Remote & Hybrid Teams", "date": "2026-05-28", "outlet": ""},
+    {"id": "S10", "type": "Other", "title": "Async-First Teams: The Step-by-Step Framework for Engineering Teams That Ship Without Constant Meetings - HR Oasis", "date": "2026-06-08", "outlet": "HR Oasis"},
+    {"id": "S11", "type": "Other", "title": "How to Move Your Team Toward Async-First Communication", "date": "2021-03-02", "outlet": ""},
+    {"id": "S12", "type": "Other", "title": "Asynchronous Communication: How to Use It for Remote Work Success", "date": "2025-07-29", "outlet": "Indeed"}]},
+  {"id": "C3", "text": "Employees still organize life around commuting, while teams suffer unequal communication between in-room and remote participants.", "verdict": "Not enough evidence", "sources": [
+    {"id": "S13", "type": "News", "title": "Remote work productivity: Employees and managers split on commuting factor | Fortune", "date": "2023-01-09", "outlet": "Fortune"}]},
+  {"id": "C4", "text": "Permanent remote work removes that ambiguity.", "verdict": "Not enough evidence", "sources": [
+    {"id": "S14", "type": "Official", "title": "Work from home and employee well-being: a double-edged sword", "date": "2025-08-08", "outlet": ""},
+    {"id": "S15", "type": "Reference", "title": "Remote work - Wikipedia", "date": "", "outlet": "Wikipedia"}]},
+  {"id": "C5", "text": "The results are measurable: studies consistently show remote knowledge workers gaining the equivalent of several productive hours per week, with less time lost to commuting and fewer low-value meetings.", "verdict": "Supported", "sources": [
+    {"id": "S16", "type": "Official", "title": "The Future of Working Away from Work and Daily Travel", "date": "", "outlet": ""},
+    {"id": "S17", "type": "Official", "title": "Supporting the productivity and wellbeing of remote workers", "date": "2021-07-23", "outlet": ""},
+    {"id": "S18", "type": "Official", "title": "Are We Really More Productive Working from Home? | Chicago Booth Review", "date": "", "outlet": "Chicago Booth Review"},
+    {"id": "S19", "type": "Official", "title": "Are We Really More Productive Working from Home? | Chicago Booth Review", "date": "", "outlet": "Chicago Booth Review"},
+    {"id": "S20", "type": "Official", "title": "Are We Really More Productive Working from Home? | Chicago Booth Review", "date": "2021-08-18", "outlet": "Chicago Booth Review"},
+    {"id": "S21", "type": "News", "title": "Too Many Zoom Meetings? 'Core Hours' Keep Some Remote Workers Productive and Sane - WSJ", "date": "2021-07-20", "outlet": "WSJ"}]}],
+ "findings": []}

@@ -1,0 +1,696 @@
+{
+ "report": "nuclear",
+ "question": "Is nuclear power the best energy source?",
+ "context": {
+  "role": "Policy staffer",
+  "use": "an internal background brief for a decision maker",
+  "stakes": "low",
+  "accountable": "Policy director"
+ },
+ "action": "PULL_SOURCE",
+ "status": "STABLE",
+ "headline": "Judges agree across different evidence slices (78%) \u2192 PULL_SOURCE.",
+ "evidence": [
+  {
+   "id": "E1",
+   "kind": "claim",
+   "ref": "C1",
+   "summary": "C1 (Contradicted: detail (sources say severe weather events, including floods, winds, and wildfires, are a hazard to the safe operation of nuclear plants because such events can disable safety systems)): A single nuclear plant can generate massive amounts of electricity around the clock, in every season, in every kind of weather.",
+   "verdict": "Contradicted: detail (sources say severe weather events, including floods, winds, and wildfires, are a hazard to the safe operation of nuclear plants because such events can disable safety systems)",
+   "text": "A single nuclear plant can generate massive amounts of electricity around the clock, in every season, in every kind of weather.",
+   "n_sources": 3,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S1"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S2"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S3"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S1",
+     "type": "Official",
+     "title": "Supply - Electricity 2026 - Analysis - IEA",
+     "date": "",
+     "outlet": "IEA"
+    },
+    {
+     "id": "S2",
+     "type": "Other",
+     "title": "Factcheck: How nuclear, gas, wind and solar power are affected during heatwaves - Carbon Brief",
+     "date": "2026-08-04",
+     "outlet": "Carbon Brief"
+    },
+    {
+     "id": "S3",
+     "type": "Other",
+     "title": "Climate change is exposing nuclear power's reliability problem - Bulletin of the Atomic Scientists",
+     "date": "2026-09-06",
+     "outlet": "Bulletin of the Atomic Scientists"
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "claim",
+   "ref": "C2",
+   "summary": "C2 (Not enough evidence): One plant can power millions of homes for 60 to 80 years.",
+   "verdict": "Not enough evidence",
+   "text": "One plant can power millions of homes for 60 to 80 years.",
+   "n_sources": 6,
+   "n_origins": 6,
+   "origins": [
+    {
+     "ids": [
+      "S4"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S5"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S6"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S7"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S8"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S9"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S4",
+     "type": "Official",
+     "title": "Going Long Term: US Nuclear Power Plants Could Extend Operating Life to 80 Years",
+     "date": "2018-01-16",
+     "outlet": ""
+    },
+    {
+     "id": "S5",
+     "type": "Official",
+     "title": "THE 80 CLUB: Celebrating America's Longest-Serving Nuclear Reactors | Department of Energy",
+     "date": "2026-07-21",
+     "outlet": "Department of Energy"
+    },
+    {
+     "id": "S6",
+     "type": "Official",
+     "title": "Nuclear Energy for a Net Zero World",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S7",
+     "type": "Official",
+     "title": "IAEA Nuclear Energy Series Non-baseload Operation in ...",
+     "date": "2018-04-19",
+     "outlet": "IAEA"
+    },
+    {
+     "id": "S8",
+     "type": "Official",
+     "title": "Project Management in Nuclear Power Plant Construction",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S9",
+     "type": "Official",
+     "title": "How old are U.S. nuclear power plants, and when was the newest one built? - Frequently Asked Questions (FAQs) - U.S. Energy Information Administration (EIA)",
+     "date": "",
+     "outlet": "EIA"
+    }
+   ]
+  },
+  {
+   "id": "E3",
+   "kind": "claim",
+   "ref": "C3",
+   "summary": "C3 (Not enough evidence): Modern economies do not run on occasional power; they run on constant power.",
+   "verdict": "Not enough evidence",
+   "text": "Modern economies do not run on occasional power; they run on constant power.",
+   "n_sources": 4,
+   "n_origins": 4,
+   "origins": [
+    {
+     "ids": [
+      "S10"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S11"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S12"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S13"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S10",
+     "type": "Official",
+     "title": "Five Reasons the Clean Energy Transition Needs Nuclear Power",
+     "date": "2026-01-27",
+     "outlet": ""
+    },
+    {
+     "id": "S11",
+     "type": "Other",
+     "title": "Nuclear energy could double by 2050, but AI-driven power demand does not change the economic case - Energy Transitions Commission",
+     "date": "2026-10-06",
+     "outlet": "Energy Transitions Commission"
+    },
+    {
+     "id": "S12",
+     "type": "Other",
+     "title": "Economics of Nuclear Power - World Nuclear Association",
+     "date": "2026-03-24",
+     "outlet": "World Nuclear Association"
+    },
+    {
+     "id": "S13",
+     "type": "Other",
+     "title": "Why Nuclear Energy Is Making a Global Comeback | Council on Foreign Relations",
+     "date": "2026-08-21",
+     "outlet": "Council on Foreign Relations"
+    }
+   ]
+  },
+  {
+   "id": "E4",
+   "kind": "claim",
+   "ref": "C4",
+   "summary": "C4 (Supported): Nuclear power supplies about 10% of the world's electricity and nearly a quarter of low-carbon electricity globally.",
+   "verdict": "Supported",
+   "text": "Nuclear power supplies about 10% of the world's electricity and nearly a quarter of low-carbon electricity globally.",
+   "n_sources": 6,
+   "n_origins": 5,
+   "origins": [
+    {
+     "ids": [
+      "S14"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S15"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S16"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S17",
+      "S18"
+     ],
+     "why": [
+      "same outlet"
+     ]
+    },
+    {
+     "ids": [
+      "S19"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S14",
+     "type": "Official",
+     "title": "Supply - Electricity 2026 - Analysis - IEA",
+     "date": "",
+     "outlet": "IEA"
+    },
+    {
+     "id": "S15",
+     "type": "Official",
+     "title": "Energy, Electricity and Nuclear Power Estimates for the Period ...",
+     "date": "2025-09-12",
+     "outlet": ""
+    },
+    {
+     "id": "S16",
+     "type": "News",
+     "title": "More countries are turning to nuclear power 40 years after the Chernobyl disaster | PBS News",
+     "date": "2026-04-24",
+     "outlet": "PBS News"
+    },
+    {
+     "id": "S17",
+     "type": "News",
+     "title": "Without nuclear power, the world's climate challenge will get a whole lot harder | CNN",
+     "date": "2020-10-09",
+     "outlet": "CNN"
+    },
+    {
+     "id": "S18",
+     "type": "News",
+     "title": "Without nuclear power, the world's climate challenge will get a whole lot harder | CNN",
+     "date": "2020-10-09",
+     "outlet": "CNN"
+    },
+    {
+     "id": "S19",
+     "type": "Reference",
+     "title": "Nuclear Energy | Our World in Data",
+     "date": "2020-07-10",
+     "outlet": "Our World in Data"
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "claim",
+   "ref": "C5",
+   "summary": "C5 (Supported): In the United States, it produces roughly half of all carbon-free electricity.",
+   "verdict": "Supported",
+   "text": "In the United States, it produces roughly half of all carbon-free electricity.",
+   "n_sources": 6,
+   "n_origins": 3,
+   "origins": [
+    {
+     "ids": [
+      "S20",
+      "S21",
+      "S24",
+      "S25"
+     ],
+     "why": [
+      "same outlet"
+     ]
+    },
+    {
+     "ids": [
+      "S22"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S23"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S20",
+     "type": "Official",
+     "title": "5 Reasons Nuclear Is a Good Neighbor | Department of Energy",
+     "date": "2024-06-12",
+     "outlet": "Department of Energy"
+    },
+    {
+     "id": "S21",
+     "type": "Official",
+     "title": "Advantages and Challenges of Nuclear Energy | Department of Energy",
+     "date": "2021-01-26",
+     "outlet": "Department of Energy"
+    },
+    {
+     "id": "S22",
+     "type": "Official",
+     "title": "The Ultimate Fast Facts Guide to Nuclear Energy",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S23",
+     "type": "Official",
+     "title": "Nuclear Energy | MIT Climate Portal",
+     "date": "",
+     "outlet": "MIT Climate Portal"
+    },
+    {
+     "id": "S24",
+     "type": "Official",
+     "title": "3 Surprising Ways to Use Nuclear Energy | Department of Energy",
+     "date": "2022-03-16",
+     "outlet": "Department of Energy"
+    },
+    {
+     "id": "S25",
+     "type": "Official",
+     "title": "5 Fast Facts About Nuclear Energy | Department of Energy",
+     "date": "2020-04-23",
+     "outlet": "Department of Energy"
+    }
+   ]
+  },
+  {
+   "id": "E6",
+   "kind": "scores",
+   "ref": "modules",
+   "summary": "Module scores (of 5): accuracy 3, bias 1, tone 5, agreement 2"
+  },
+  {
+   "id": "E7",
+   "kind": "finding",
+   "ref": "F1",
+   "severity": "CRITICAL",
+   "summary": "F1 [CRITICAL] Excessive agreement: Flattery marker detected: \"Absolutely.\""
+  },
+  {
+   "id": "E8",
+   "kind": "finding",
+   "ref": "F2",
+   "severity": "CRITICAL",
+   "summary": "F2 [CRITICAL] Excessive agreement: Flattery marker detected: \"the clear winner\""
+  },
+  {
+   "id": "E9",
+   "kind": "finding",
+   "ref": "F3",
+   "severity": "NOTE",
+   "summary": "F3 [NOTE] Missing source: Specific number without source: \"about 10%\""
+  }
+ ],
+ "panel": {
+  "n_judges": 9,
+  "r": 4,
+  "mode": "offline-mock",
+  "votes": [
+   {
+    "judge": "gpt-nano",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E5",
+     "E7"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3",
+     "E7"
+    ],
+    "why": "C3 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "gpt-mini",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E6",
+     "E7",
+     "E9"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E2",
+     "E6",
+     "E7"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "haiku",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E4",
+     "E8",
+     "E9"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E1",
+     "E8"
+    ],
+    "why": "C1 is contradicted",
+    "cached": true
+   },
+   {
+    "judge": "sonnet",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E3",
+     "E5",
+     "E7"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E2",
+     "E3",
+     "E7"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "gemini",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6",
+     "E7"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E2",
+     "E6",
+     "E7"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "llama",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4",
+     "E8"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3",
+     "E8"
+    ],
+    "why": "C3 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "qwen",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4",
+     "E5"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C3 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "mistral",
+    "model": "offline-mock",
+    "saw": [
+     "E4",
+     "E6",
+     "E8",
+     "E9"
+    ],
+    "action": "REWRITE",
+    "cited": [
+     "E6",
+     "E8"
+    ],
+    "why": "bias score shows one-sided framing",
+    "cached": true
+   },
+   {
+    "judge": "deepseek",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E6",
+     "E8",
+     "E9"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E2",
+     "E6",
+     "E8"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   }
+  ],
+  "tally": {
+   "PULL_SOURCE": 7,
+   "REWRITE": 2
+  },
+  "top_action": "PULL_SOURCE",
+  "top_share": 0.778
+ },
+ "flip_evidence": null,
+ "hard_rules": [
+  {
+   "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "triggered": true,
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
+   "triggered": true,
+   "evidence": [
+    "E7",
+    "E8"
+   ]
+  }
+ ],
+ "load_bearing": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5"
+ ],
+ "reasons": [
+  {
+   "text": "C4 lists 6 sources but only 5 independent origin(s) could confirm it",
+   "evidence": [
+    "E4",
+    "C4",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19"
+   ]
+  },
+  {
+   "text": "C5 lists 6 sources but only 3 independent origin(s) could confirm it",
+   "evidence": [
+    "E5",
+    "C5",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25"
+   ]
+  },
+  {
+   "text": "Ezio bias score 1/5: the answer leans to one side; a balanced rewrite is needed before it is used",
+   "evidence": [
+    "E6"
+   ]
+  },
+  {
+   "text": "Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "evidence": [
+    "E1"
+   ]
+  },
+  {
+   "text": "Hard rule: CRITICAL finding -> never APPROVE as is (at least REWRITE)",
+   "evidence": [
+    "E7",
+    "E8"
+   ]
+  },
+  {
+   "text": "Panel: {'PULL_SOURCE': 7, 'REWRITE': 2}; top action PULL_SOURCE at 78% (\u2265 70% needed) \u2192 STABLE",
+   "evidence": [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7",
+    "E8"
+   ]
+  }
+ ],
+ "unchecked": [],
+ "human": {
+  "to": "Policy director",
+  "question": null,
+  "answer": null
+ },
+ "before": null,
+ "trace": [
+  "parsed 5 claims, 3 findings",
+  "9 evidence pieces; each shown to 4 of 9 judges",
+  "panel mode: offline mock",
+  "tally {'PULL_SOURCE': 7, 'REWRITE': 2} \u2192 STABLE",
+  "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE', 'CRITICAL finding -> never APPROVE as is (at least REWRITE)']",
+  "final action: PULL_SOURCE"
+ ]
+}

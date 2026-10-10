@@ -1,0 +1,16 @@
+{"report": "_test", "question": "TEST ONLY - synthetic report to exercise the pipeline before real PDFs arrive",
+ "analyzed_text": "EV sales grew 35% in 2025. Battery costs fell below $100/kWh. Analysts expect 40% share by 2030. China produced 60% of all EVs in 2025.",
+ "verdict": {"summary": "Mostly supported", "issue_count": 2},
+ "modules": {"accuracy": 3, "bias": 4, "tone": 5, "agreement": 3},
+ "claims": [
+  {"id": "C1", "text": "EV sales grew 35% in 2025", "verdict": "Supported", "sources": [
+    {"id": "S1", "type": "News", "title": "Global EV sales jump 35 percent in 2025, report says", "date": "2026-01-14", "outlet": "Outlet A"},
+    {"id": "S2", "type": "News", "title": "Global EV sales jump 35% in 2025 - report", "date": "2026-01-14", "outlet": "Outlet B"},
+    {"id": "S3", "type": "Other", "title": "Global EV sales jump 35 percent in 2025 report says", "date": "2026-01-15", "outlet": "Blog C"}]},
+  {"id": "C2", "text": "Battery costs fell below $100/kWh", "verdict": "Supported", "sources": [
+    {"id": "S4", "type": "Official", "title": "Battery price survey 2025", "date": "2025-12-10", "outlet": "Agency D"},
+    {"id": "S5", "type": "News", "title": "Lithium-ion pack prices hit record low", "date": "2025-12-11", "outlet": "Outlet E"}]},
+  {"id": "C3", "text": "Analysts expect 40% share by 2030", "verdict": "Not enough evidence", "sources": []},
+  {"id": "C4", "text": "China produced 60% of all EVs in 2025", "verdict": "Supported", "sources": [
+    {"id": "S6", "type": "Official", "title": "Global EV Outlook 2026", "date": "2026-04-01", "outlet": "Agency F"}]}],
+ "findings": [{"id": "F1", "category": "Factual claims", "severity": "NOTE", "text": "One forecast is unsupported."}]}

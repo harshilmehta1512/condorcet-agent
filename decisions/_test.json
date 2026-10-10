@@ -1,0 +1,360 @@
+{
+ "report": "_test",
+ "question": "TEST ONLY - synthetic report to exercise the pipeline before real PDFs arrive",
+ "context": {
+  "role": "Policy staffer",
+  "use": "an internal background brief for a decision maker",
+  "stakes": "low",
+  "accountable": "Policy director"
+ },
+ "action": "REWRITE",
+ "status": "FRAGILE",
+ "headline": "Decision splits depending on C1; asking Policy director.",
+ "evidence": [
+  {
+   "id": "E1",
+   "kind": "claim",
+   "ref": "C1",
+   "summary": "C1 (Supported): EV sales grew 35% in 2025",
+   "verdict": "Supported",
+   "n_sources": 3,
+   "n_origins": 1,
+   "origins": [
+    {
+     "ids": [
+      "S1",
+      "S2",
+      "S3"
+     ],
+     "why": [
+      "near-identical titles (0.78)",
+      "near-identical titles (1.00)"
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "id": "S1",
+     "type": "News",
+     "title": "Global EV sales jump 35 percent in 2025, report says",
+     "date": "2026-01-14",
+     "outlet": "Outlet A"
+    },
+    {
+     "id": "S2",
+     "type": "News",
+     "title": "Global EV sales jump 35% in 2025 - report",
+     "date": "2026-01-14",
+     "outlet": "Outlet B"
+    },
+    {
+     "id": "S3",
+     "type": "Other",
+     "title": "Global EV sales jump 35 percent in 2025 report says",
+     "date": "2026-01-15",
+     "outlet": "Blog C"
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "claim",
+   "ref": "C2",
+   "summary": "C2 (Supported): Battery costs fell below $100/kWh",
+   "verdict": "Supported",
+   "n_sources": 2,
+   "n_origins": 2,
+   "origins": [
+    {
+     "ids": [
+      "S4"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S5"
+     ],
+     "why": []
+    }
+   ],
+   "sources": [
+    {
+     "id": "S4",
+     "type": "Official",
+     "title": "Battery price survey 2025",
+     "date": "2025-12-10",
+     "outlet": "Agency D"
+    },
+    {
+     "id": "S5",
+     "type": "News",
+     "title": "Lithium-ion pack prices hit record low",
+     "date": "2025-12-11",
+     "outlet": "Outlet E"
+    }
+   ]
+  },
+  {
+   "id": "E3",
+   "kind": "claim",
+   "ref": "C3",
+   "summary": "C3 (Not enough evidence): Analysts expect 40% share by 2030",
+   "verdict": "Not enough evidence",
+   "n_sources": 0,
+   "n_origins": 0,
+   "origins": [],
+   "sources": []
+  },
+  {
+   "id": "E4",
+   "kind": "claim",
+   "ref": "C4",
+   "summary": "C4 (Supported): China produced 60% of all EVs in 2025",
+   "verdict": "Supported",
+   "n_sources": 1,
+   "n_origins": 1,
+   "origins": [
+    {
+     "ids": [
+      "S6"
+     ],
+     "why": []
+    }
+   ],
+   "sources": [
+    {
+     "id": "S6",
+     "type": "Official",
+     "title": "Global EV Outlook 2026",
+     "date": "2026-04-01",
+     "outlet": "Agency F"
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "scores",
+   "ref": "modules",
+   "summary": "Module scores (of 5): accuracy 3, bias 4, tone 5, agreement 3"
+  },
+  {
+   "id": "E6",
+   "kind": "finding",
+   "ref": "F1",
+   "severity": "NOTE",
+   "summary": "F1 [NOTE] Factual claims: One forecast is unsupported."
+  }
+ ],
+ "panel": {
+  "n_judges": 9,
+  "r": 4,
+  "mode": "offline-mock",
+  "votes": [
+   {
+    "judge": "gpt-nano",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6"
+    ],
+    "action": "APPROVE",
+    "cited": [],
+    "why": "all evidence shown looks supported by independent origins",
+    "cached": true
+   },
+   {
+    "judge": "gpt-mini",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5"
+    ],
+    "action": "APPROVE",
+    "cited": [],
+    "why": "all evidence shown looks supported by independent origins",
+    "cached": true
+   },
+   {
+    "judge": "haiku",
+    "model": "offline-mock",
+    "saw": [
+     "E3",
+     "E4",
+     "E6"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E3"
+    ],
+    "why": "C3 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "sonnet",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C1: 3 sources but 1 independent origin",
+    "cached": true
+   },
+   {
+    "judge": "gemini",
+    "model": "offline-mock",
+    "saw": [
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "APPROVE",
+    "cited": [],
+    "why": "all evidence shown looks supported by independent origins",
+    "cached": true
+   },
+   {
+    "judge": "llama",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6"
+    ],
+    "action": "APPROVE",
+    "cited": [],
+    "why": "all evidence shown looks supported by independent origins",
+    "cached": true
+   },
+   {
+    "judge": "qwen",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C1: 3 sources but 1 independent origin",
+    "cached": true
+   },
+   {
+    "judge": "mistral",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C1: 3 sources but 1 independent origin",
+    "cached": true
+   },
+   {
+    "judge": "deepseek",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E2"
+    ],
+    "action": "PULL_SOURCE",
+    "cited": [
+     "E1"
+    ],
+    "why": "C1: 3 sources but 1 independent origin",
+    "cached": true
+   }
+  ],
+  "tally": {
+   "APPROVE": 4,
+   "PULL_SOURCE": 5
+  },
+  "top_action": "PULL_SOURCE",
+  "top_share": 0.556
+ },
+ "flip_evidence": {
+  "id": "E1",
+  "ref": "C1",
+  "tv": 0.8,
+  "saw_it": {
+   "PULL_SOURCE": 4
+  },
+  "didnt": {
+   "APPROVE": 4,
+   "PULL_SOURCE": 1
+  }
+ },
+ "hard_rules": [
+  {
+   "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "triggered": false,
+   "evidence": []
+  },
+  {
+   "rule": "CRITICAL finding -> never APPROVE without a human",
+   "triggered": false,
+   "evidence": []
+  }
+ ],
+ "load_bearing": [
+  "C1",
+  "C2",
+  "C3",
+  "C4"
+ ],
+ "reasons": [
+  {
+   "text": "C1 lists 3 sources but only 1 independent origin(s)",
+   "evidence": [
+    "E1",
+    "C1",
+    "S1",
+    "S2",
+    "S3"
+   ]
+  },
+  {
+   "text": "Panel: {'APPROVE': 4, 'PULL_SOURCE': 5}; top action PULL_SOURCE at 56% (< 70% needed) \u2192 FRAGILE",
+   "evidence": [
+    "E1",
+    "E3"
+   ]
+  },
+  {
+   "text": "Decision depends on E1 (C1): judges who saw it {'PULL_SOURCE': 4}, judges who did not {'APPROVE': 4, 'PULL_SOURCE': 1}",
+   "evidence": [
+    "E1",
+    "C1"
+   ]
+  }
+ ],
+ "unchecked": [],
+ "human": {
+  "to": "Policy director",
+  "question": "The decision depends on C1: \"C1 (Supported): EV sales grew 35% in 2025\". Can you confirm or correct it from a source you trust?",
+  "answer": null
+ },
+ "before": null,
+ "trace": [
+  "parsed 4 claims, 1 findings",
+  "6 evidence pieces; each shown to 4 of 9 judges",
+  "panel mode: offline mock",
+  "tally {'APPROVE': 4, 'PULL_SOURCE': 5} \u2192 FRAGILE",
+  "hard floor: none triggered",
+  "final action: REWRITE"
+ ]
+}

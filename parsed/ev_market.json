@@ -1,0 +1,37 @@
+{"report": "ev_market",
+ "source_note": "Transcribed from screenshots of the Ezio Try Product report (EV market [GPT-5]) at 2:11 PM; no PDF export button was available. Findings section not visible in the screenshots.",
+ "question": "Give a 2024 global EV market snapshot.",
+ "analyzed_text": "2024 global EV market snapshot. Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023. Top 3 manufacturers by EV volume: 1. BYD: 4.27 million vehicles. 2. Tesla: 1.79 million vehicles delivered. 3. Geely Group: ~1.49 million new-energy vehicles. Average lithium-ion battery pack price: The 2024 global average fell to $115 per kWh, a sharp year-over-year decline. Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue. China's share of global EV production: China accounted for roughly 70% of global EV production in 2024, maintaining its dominant manufacturing position. Battery recycling: Battery recycling expanded quickly in 2024, with leading processes now able to recover over 90% of key metals such as nickel, cobalt, and lithium, improving supply security and reducing raw-material intensity. Overall, 2024 was another record year for EVs: sales kept growing, battery costs fell materially, China remained the production hub, and recycling became a more important part of the industry's economics.",
+ "verdict": {"summary": "2 of 3 checkable claims hold up. 1 has a wrong amount. 2 could not be checked against reliable sources.", "issue_count": 3},
+ "modules": {"accuracy": 3, "bias": 5, "tone": 5, "agreement": 5},
+ "claims": [
+  {"id": "C1", "text": "Geely Group: 1.49 million new-energy vehicles", "verdict": "Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)", "sources": [
+    {"id": "S1", "type": "Official", "title": "Geely Auto Exceeds 3.02 Million Vehicle Sales in 2025, Sets New Growth Targets for 2026", "date": "2026-03-23", "outlet": ""},
+    {"id": "S2", "type": "Official", "title": "Brand", "date": "", "outlet": ""},
+    {"id": "S3", "type": "Reference", "title": "Geely Auto - Wikipedia", "date": "2026-08-23", "outlet": "Wikipedia"},
+    {"id": "S4", "type": "Other", "title": "Geely aiming for stable growth amid intense market contest - Chinadaily.com.cn", "date": "2025-01-13", "outlet": "Chinadaily.com.cn"},
+    {"id": "S5", "type": "Other", "title": "Geely Auto (A brand under Zhejiang Geely Holding Group) _Baiduwiki", "date": "", "outlet": "Baiduwiki"},
+    {"id": "S6", "type": "Other", "title": "Geely Cars: China's Global Auto Group and EV Strategy - ChoZan", "date": "2026-06-02", "outlet": "ChoZan"}]},
+  {"id": "C2", "text": "2024 global EV market snapshot", "verdict": "Not enough evidence", "sources": [
+    {"id": "S7", "type": "News", "title": "America's retreat is increasing China's control of global EV markets", "date": "2026-02-06", "outlet": ""},
+    {"id": "S8", "type": "News", "title": "Global EV sales growth likely to slow after 20% jump in rocky 2025, research firm says", "date": "2026-01-14", "outlet": ""},
+    {"id": "S9", "type": "News", "title": "Global EV sales fall again in February", "date": "2026-03-13", "outlet": ""}]},
+  {"id": "C3", "text": "Top 3 manufacturers by EV volume", "verdict": "Not enough evidence", "sources": [
+    {"id": "S10", "type": "News", "title": "A bumpy road for EV manufacturers | TechCrunch", "date": "2024-02-23", "outlet": "TechCrunch"},
+    {"id": "S11", "type": "News", "title": "2027 Chevy Bolt, Rare Sub-$30K EV, Arrives In Volume At Dealers", "date": "", "outlet": ""},
+    {"id": "S12", "type": "News", "title": "Used EV Market Volume Reaches New High, So What's Next?", "date": "", "outlet": ""}]},
+  {"id": "C4", "text": "Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue", "verdict": "Supported", "sources": [
+    {"id": "S13", "type": "Official", "title": "tsla-20241231", "date": "2025-01-29", "outlet": "Tesla SEC filing"},
+    {"id": "S14", "type": "News", "title": "Tesla Reports First Annual Revenue Decline Ever", "date": "2026-01-28", "outlet": ""},
+    {"id": "S15", "type": "Other", "title": "Tesla releases 2024 financial results: Revenue is up, but profits are down - electrive.com", "date": "2025-01-29", "outlet": "electrive.com"},
+    {"id": "S16", "type": "Other", "title": "Tesla Growth and Production Statistics: How Many Vehicles Are Sold Across the Globe?", "date": "2022-09-14", "outlet": ""},
+    {"id": "S17", "type": "Other", "title": "Tesla Revenue 2012-2026 | TSLA", "date": "", "outlet": ""},
+    {"id": "S18", "type": "Other", "title": "Tesla tops Q4 expectations as annual revenue falls for first time", "date": "2026-01-29", "outlet": ""}]},
+  {"id": "C5", "text": "Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023", "verdict": "Supported", "sources": [
+    {"id": "S19", "type": "Official", "title": "Trends in electric car markets - Global EV Outlook 2025 - Analysis - IEA", "date": "", "outlet": "IEA"},
+    {"id": "S20", "type": "Official", "title": "Hybrid-Electric, Plug-in Hybrid-Electric and Electric Vehicle Sales | Bureau of Transportation Statistics", "date": "2026-08-22", "outlet": "Bureau of Transportation Statistics"},
+    {"id": "S21", "type": "Reference", "title": "Electric car use by country", "date": "2010-04-10", "outlet": ""},
+    {"id": "S22", "type": "Reference", "title": "Tracking global data on electric vehicles | Our World in Data", "date": "2024-02-26", "outlet": "Our World in Data"},
+    {"id": "S23", "type": "Other", "title": "Unlocking growth: 5 key electric vehicle stats for 2024 - Smartcar blog", "date": "2024-01-10", "outlet": "Smartcar blog"},
+    {"id": "S24", "type": "Other", "title": "The Global Electric Vehicle Market In 2025", "date": "2025-08-07", "outlet": ""}]}],
+ "findings": []}

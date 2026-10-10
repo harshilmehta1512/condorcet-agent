@@ -1,0 +1,44 @@
+EZIO TRUST REPORT - EV market [GPT-5]
+Transcribed from screenshots of the Ezio Try Product report (EV market [GPT-5]) at 2:11 PM; no PDF export button was available. Findings section not visible in the screenshots.
+
+ANALYZED RESPONSE
+2024 global EV market snapshot. Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023. Top 3 manufacturers by EV volume: 1. BYD: 4.27 million vehicles. 2. Tesla: 1.79 million vehicles delivered. 3. Geely Group: ~1.49 million new-energy vehicles. Average lithium-ion battery pack price: The 2024 global average fell to $115 per kWh, a sharp year-over-year decline. Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue. China's share of global EV production: China accounted for roughly 70% of global EV production in 2024, maintaining its dominant manufacturing position. Battery recycling: Battery recycling expanded quickly in 2024, with leading processes now able to recover over 90% of key metals such as nickel, cobalt, and lithium, improving supply security and reducing raw-material intensity. Overall, 2024 was another record year for EVs: sales kept growing, battery costs fell materially, China remained the production hub, and recycling became a more important part of the industry's economics.
+
+TRUST VERDICT: 2 of 3 checkable claims hold up. 1 has a wrong amount. 2 could not be checked against reliable sources.
+TRUST DIMENSIONS (of 5): accuracy 3, bias 5, tone 5, agreement 5
+
+CLAIM ANALYSIS
+
+C1 [Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)] "Geely Group: 1.49 million new-energy vehicles"
+  [S1 Official] Geely Auto Exceeds 3.02 Million Vehicle Sales in 2025, Sets New Growth Targets for 2026  2026-03-23
+  [S2 Official] Brand  
+  [S3 Reference] Geely Auto - Wikipedia  2026-08-23
+  [S4 Other] Geely aiming for stable growth amid intense market contest - Chinadaily.com.cn  2025-01-13
+  [S5 Other] Geely Auto (A brand under Zhejiang Geely Holding Group) _Baiduwiki  
+  [S6 Other] Geely Cars: China's Global Auto Group and EV Strategy - ChoZan  2026-06-02
+
+C2 [Not enough evidence] "2024 global EV market snapshot"
+  [S7 News] America's retreat is increasing China's control of global EV markets  2026-02-06
+  [S8 News] Global EV sales growth likely to slow after 20% jump in rocky 2025, research firm says  2026-01-14
+  [S9 News] Global EV sales fall again in February  2026-03-13
+
+C3 [Not enough evidence] "Top 3 manufacturers by EV volume"
+  [S10 News] A bumpy road for EV manufacturers | TechCrunch  2024-02-23
+  [S11 News] 2027 Chevy Bolt, Rare Sub-$30K EV, Arrives In Volume At Dealers  
+  [S12 News] Used EV Market Volume Reaches New High, So What's Next?  
+
+C4 [Supported] "Tesla annual revenue: Tesla reported $97.7 billion in 2024 revenue"
+  [S13 Official] tsla-20241231  2025-01-29
+  [S14 News] Tesla Reports First Annual Revenue Decline Ever  2026-01-28
+  [S15 Other] Tesla releases 2024 financial results: Revenue is up, but profits are down - electrive.com  2025-01-29
+  [S16 Other] Tesla Growth and Production Statistics: How Many Vehicles Are Sold Across the Globe?  2022-09-14
+  [S17 Other] Tesla Revenue 2012-2026 | TSLA  
+  [S18 Other] Tesla tops Q4 expectations as annual revenue falls for first time  2026-01-29
+
+C5 [Supported] "Worldwide EV unit sales: About 17.1 million electric vehicles were sold globally in 2024 (battery-electric + plug-in hybrid), up from roughly 13.9 million in 2023"
+  [S19 Official] Trends in electric car markets - Global EV Outlook 2025 - Analysis - IEA  
+  [S20 Official] Hybrid-Electric, Plug-in Hybrid-Electric and Electric Vehicle Sales | Bureau of Transportation Statistics  2026-08-22
+  [S21 Reference] Electric car use by country  2010-04-10
+  [S22 Reference] Tracking global data on electric vehicles | Our World in Data  2024-02-26
+  [S23 Other] Unlocking growth: 5 key electric vehicle stats for 2024 - Smartcar blog  2024-01-10
+  [S24 Other] The Global Electric Vehicle Market In 2025  2025-08-07

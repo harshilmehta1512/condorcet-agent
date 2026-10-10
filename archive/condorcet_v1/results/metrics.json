@@ -1,0 +1,627 @@
+{
+ "meta": {
+  "n_items": 150,
+  "judges": [
+   "gpt-nano",
+   "gpt-mini",
+   "haiku",
+   "sonnet",
+   "gemini-flash",
+   "llama",
+   "qwen",
+   "mistral",
+   "deepseek"
+  ],
+  "n_judges": 9,
+  "r": 4,
+  "seed": 42,
+  "provider": "mock",
+  "FAKE": true,
+  "parse_fail": {
+   "A": 0,
+   "B": 0
+  },
+  "generated_at": "2026-10-10T13:11:05"
+ },
+ "conditions": {
+  "A": {
+   "n_eff": 2.445,
+   "n_eff_raw": 2.445,
+   "n_eff_ci": [
+    2.109,
+    2.908
+   ],
+   "rho_bar": 0.335,
+   "rho_matrix": [
+    [
+     1.0,
+     0.3917,
+     0.2924,
+     0.2256,
+     0.3329,
+     0.3615,
+     0.3231,
+     0.3956,
+     0.2438
+    ],
+    [
+     0.3917,
+     1.0,
+     0.3346,
+     0.3919,
+     0.3077,
+     0.3335,
+     0.3028,
+     0.3263,
+     0.2189
+    ],
+    [
+     0.2924,
+     0.3346,
+     1.0,
+     0.2066,
+     0.3512,
+     0.3426,
+     0.3154,
+     0.4701,
+     0.2942
+    ],
+    [
+     0.2256,
+     0.3919,
+     0.2066,
+     1.0,
+     0.3405,
+     0.2275,
+     0.3059,
+     0.3702,
+     0.2505
+    ],
+    [
+     0.3329,
+     0.3077,
+     0.3512,
+     0.3405,
+     1.0,
+     0.4807,
+     0.3845,
+     0.4479,
+     0.3626
+    ],
+    [
+     0.3615,
+     0.3335,
+     0.3426,
+     0.2275,
+     0.4807,
+     1.0,
+     0.3765,
+     0.4441,
+     0.2854
+    ],
+    [
+     0.3231,
+     0.3028,
+     0.3154,
+     0.3059,
+     0.3845,
+     0.3765,
+     1.0,
+     0.4386,
+     0.1957
+    ],
+    [
+     0.3956,
+     0.3263,
+     0.4701,
+     0.3702,
+     0.4479,
+     0.4441,
+     0.4386,
+     1.0,
+     0.3888
+    ],
+    [
+     0.2438,
+     0.2189,
+     0.2942,
+     0.2505,
+     0.3626,
+     0.2854,
+     0.1957,
+     0.3888,
+     1.0
+    ]
+   ],
+   "panel_acc": 0.7667,
+   "panel_acc_ci": [
+    0.6928,
+    0.8272
+   ],
+   "coverage": 1.0,
+   "condorcet_pred": 0.9096,
+   "condorcet_gap": 0.1429,
+   "best_single": {
+    "judge": "llama",
+    "acc_same_items": 0.7467,
+    "ci": [
+     0.6715,
+     0.8095
+    ]
+   },
+   "per_judge": {
+    "gpt-nano": {
+     "acc": 0.64,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "gpt-mini": {
+     "acc": 0.6867,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "haiku": {
+     "acc": 0.7133,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "sonnet": {
+     "acc": 0.7267,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "gemini-flash": {
+     "acc": 0.7333,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "llama": {
+     "acc": 0.7467,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "qwen": {
+     "acc": 0.7133,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "mistral": {
+     "acc": 0.6733,
+     "abstain": 0.0,
+     "guess_rate": null
+    },
+    "deepseek": {
+     "acc": 0.72,
+     "abstain": 0.0,
+     "guess_rate": null
+    }
+   },
+   "agreement_table": [
+    {
+     "k_of_committed": "9/9",
+     "count": 34,
+     "acc": 0.8824,
+     "ci": [
+      0.7338,
+      0.9533
+     ]
+    },
+    {
+     "k_of_committed": "8/9",
+     "count": 44,
+     "acc": 0.8182,
+     "ci": [
+      0.6804,
+      0.9049
+     ]
+    },
+    {
+     "k_of_committed": "7/9",
+     "count": 44,
+     "acc": 0.75,
+     "ci": [
+      0.6056,
+      0.8543
+     ]
+    },
+    {
+     "k_of_committed": "6/9",
+     "count": 16,
+     "acc": 0.6875,
+     "ci": [
+      0.444,
+      0.8584
+     ]
+    },
+    {
+     "k_of_committed": "5/9",
+     "count": 12,
+     "acc": 0.4167,
+     "ci": [
+      0.1933,
+      0.6805
+     ]
+    }
+   ],
+   "false_consensus": 0.08
+  },
+  "B": {
+   "n_eff": 9,
+   "n_eff_raw": 12.999,
+   "n_eff_ci": [
+    9.0,
+    9.0
+   ],
+   "rho_bar": -0.0385,
+   "rho_matrix": [
+    [
+     1.0,
+     -0.0436,
+     -0.1778,
+     -0.0156,
+     -0.0236,
+     0.0041,
+     0.072,
+     -0.1868,
+     -0.0319
+    ],
+    [
+     -0.0436,
+     1.0,
+     0.091,
+     -0.0923,
+     -0.1808,
+     0.0195,
+     -0.1024,
+     -0.1175,
+     -0.0551
+    ],
+    [
+     -0.1778,
+     0.091,
+     1.0,
+     0.0529,
+     -0.1179,
+     0.072,
+     -0.0558,
+     0.1283,
+     -0.0985
+    ],
+    [
+     -0.0156,
+     -0.0923,
+     0.0529,
+     1.0,
+     0.0793,
+     0.0252,
+     -0.1019,
+     -0.2152,
+     -0.0273
+    ],
+    [
+     -0.0236,
+     -0.1808,
+     -0.1179,
+     0.0793,
+     1.0,
+     0.1025,
+     -0.0025,
+     -0.057,
+     -0.0827
+    ],
+    [
+     0.0041,
+     0.0195,
+     0.072,
+     0.0252,
+     0.1025,
+     1.0,
+     -0.0364,
+     -0.1906,
+     -0.1162
+    ],
+    [
+     0.072,
+     -0.1024,
+     -0.0558,
+     -0.1019,
+     -0.0025,
+     -0.0364,
+     1.0,
+     0.0478,
+     0.1247
+    ],
+    [
+     -0.1868,
+     -0.1175,
+     0.1283,
+     -0.2152,
+     -0.057,
+     -0.1906,
+     0.0478,
+     1.0,
+     -0.0745
+    ],
+    [
+     -0.0319,
+     -0.0551,
+     -0.0985,
+     -0.0273,
+     -0.0827,
+     -0.1162,
+     0.1247,
+     -0.0745,
+     1.0
+    ]
+   ],
+   "panel_acc": 0.9932,
+   "panel_acc_ci": [
+    0.9625,
+    0.9988
+   ],
+   "coverage": 0.98,
+   "condorcet_pred": 0.9798,
+   "condorcet_gap": -0.0134,
+   "best_single": {
+    "judge": "llama",
+    "acc_same_items": 0.7415,
+    "ci": [
+     0.6652,
+     0.8055
+    ]
+   },
+   "per_judge": {
+    "gpt-nano": {
+     "acc": 0.8148,
+     "abstain": 0.28,
+     "guess_rate": 0.3,
+     "acc_informed": 0.8889
+    },
+    "gpt-mini": {
+     "acc": 0.7876,
+     "abstain": 0.2467,
+     "guess_rate": 0.3019,
+     "acc_informed": 0.8351
+    },
+    "haiku": {
+     "acc": 0.7895,
+     "abstain": 0.24,
+     "guess_rate": 0.3571,
+     "acc_informed": 0.8085
+    },
+    "sonnet": {
+     "acc": 0.8468,
+     "abstain": 0.26,
+     "guess_rate": 0.25,
+     "acc_informed": 0.8878
+    },
+    "gemini-flash": {
+     "acc": 0.835,
+     "abstain": 0.3133,
+     "guess_rate": 0.1754,
+     "acc_informed": 0.871
+    },
+    "llama": {
+     "acc": 0.8515,
+     "abstain": 0.3267,
+     "guess_rate": 0.2576,
+     "acc_informed": 0.9048
+    },
+    "qwen": {
+     "acc": 0.8252,
+     "abstain": 0.3133,
+     "guess_rate": 0.2295,
+     "acc_informed": 0.8876
+    },
+    "mistral": {
+     "acc": 0.7731,
+     "abstain": 0.2067,
+     "guess_rate": 0.3673,
+     "acc_informed": 0.8119
+    },
+    "deepseek": {
+     "acc": 0.8077,
+     "abstain": 0.3067,
+     "guess_rate": 0.2459,
+     "acc_informed": 0.8539
+    }
+   },
+   "agreement_table": [
+    {
+     "k_of_committed": "9/9",
+     "count": 3,
+     "acc": 1.0,
+     "ci": [
+      0.4385,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "8/9",
+     "count": 7,
+     "acc": 1.0,
+     "ci": [
+      0.6457,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "7/9",
+     "count": 9,
+     "acc": 1.0,
+     "ci": [
+      0.7008,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "8/8",
+     "count": 5,
+     "acc": 1.0,
+     "ci": [
+      0.5655,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "7/8",
+     "count": 12,
+     "acc": 1.0,
+     "ci": [
+      0.7575,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "6/8",
+     "count": 8,
+     "acc": 1.0,
+     "ci": [
+      0.6756,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "5/8",
+     "count": 5,
+     "acc": 1.0,
+     "ci": [
+      0.5655,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "7/7",
+     "count": 4,
+     "acc": 1.0,
+     "ci": [
+      0.5101,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "6/7",
+     "count": 11,
+     "acc": 1.0,
+     "ci": [
+      0.7412,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "5/7",
+     "count": 8,
+     "acc": 1.0,
+     "ci": [
+      0.6756,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "4/7",
+     "count": 2,
+     "acc": 0.5,
+     "ci": [
+      0.0945,
+      0.9055
+     ]
+    },
+    {
+     "k_of_committed": "6/6",
+     "count": 4,
+     "acc": 1.0,
+     "ci": [
+      0.5101,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "5/6",
+     "count": 8,
+     "acc": 1.0,
+     "ci": [
+      0.6756,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "4/6",
+     "count": 12,
+     "acc": 1.0,
+     "ci": [
+      0.7575,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "5/5",
+     "count": 9,
+     "acc": 1.0,
+     "ci": [
+      0.7008,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "4/5",
+     "count": 14,
+     "acc": 1.0,
+     "ci": [
+      0.7847,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "3/5",
+     "count": 7,
+     "acc": 1.0,
+     "ci": [
+      0.6457,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "4/4",
+     "count": 9,
+     "acc": 1.0,
+     "ci": [
+      0.7008,
+      1.0
+     ]
+    },
+    {
+     "k_of_committed": "3/4",
+     "count": 10,
+     "acc": 1.0,
+     "ci": [
+      0.7225,
+      1.0
+     ]
+    }
+   ],
+   "false_consensus": 0.0
+  }
+ },
+ "hypotheses": {
+  "H1": {
+   "pass": true,
+   "detail": "n_eff(A) = 2.445 vs threshold 4.5 (of 9 judges)",
+   "status": "pass"
+  },
+  "H2": {
+   "pass": false,
+   "detail": "panel A 0.767 vs best single 0.747 (same items)",
+   "status": "fail"
+  },
+  "H3": {
+   "pass": true,
+   "status": "pass",
+   "detail": "n_eff(B) - n_eff(A) = 6.55, paired 95% CI [6.06, 6.87]"
+  },
+  "H4": {
+   "pass": true,
+   "detail": "panel B 0.993 vs best single 0.742 (items B decided)",
+   "status": "pass"
+  }
+ }
+}

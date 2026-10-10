@@ -1,0 +1,9 @@
+.venv/
+data/raw/
+cache/
+__pycache__/
+.pytest_cache/
+.env
+.gstack/
+.DS_Store
+.claude/
