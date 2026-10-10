@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset=utf-8><style>html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#0d1016;font-family:Menlo,Consolas,monospace}
+.bar{background:#1f2430;color:#9aa3b2;padding:8px 16px;font:15px -apple-system,sans-serif}.cap{background:#7c3aed;color:#fff;padding:10px 16px;font:bold 20px -apple-system,sans-serif}
+pre{margin:0;padding:14px 18px;color:#d6dae3;font-size:15.5px;line-height:1.5;white-space:pre-wrap}.c{color:#4ade80}.hl{color:#fbbf24}.r{color:#f87171}</style></head><body><div class="cap">1 · LIVE: the agent reads the Ezio EV report for an analyst&#x27;s client note</div><div class="bar">condorcet-agent — zsh</div><pre><span class="c">$ python -m agent.run --report parsed/ev_market.json --context contexts/analyst_client_note.json</span>
+<span class="hl">ev_market: BLOCK (INFO_GAP) | tally {&#x27;ESCALATE&#x27;: 4, &#x27;BLOCK&#x27;: 4, &#x27;APPROVE&#x27;: 1} | mode offline-mock</span>
+  Every judge who saw C1 agrees → BLOCK; C1 is the evidence a reviewer must not miss. Asking Research lead to verify it.
+  - C4 lists 6 sources but only 4 independent origin(s) could confirm it (1 published before the period it covers)
+  - C5 lists 6 sources but only 3 independent origin(s) could confirm it (3 published before the period it covers)
+<span class="r">  - C1: Ezio marks it contradicted, but the figure it quotes from its sources matches the claim; the verdict itself needs a human check</span>
+<span class="r">  - Hard rule: Load-bearing claim contradicted by Ezio -&gt; never APPROVE</span>
+  - Panel: {&#x27;ESCALATE&#x27;: 4, &#x27;BLOCK&#x27;: 4, &#x27;APPROVE&#x27;: 1}; top action ESCALATE at 44% (&lt; 70% needed) → INFO_GAP
+  - The split is explained by who was shown C1 (judges who saw it {&#x27;BLOCK&#x27;: 4}, judges who did not {&#x27;ESCALATE&#x27;: 4, &#x27;APPROVE&#x27;: 1}): an information gap we created by hiding it, not real uncertainty. Decision follows the judges who saw it; C1 is the must-not-miss evidence.
+  - Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule
+  ? to Research lead: The decision depends on C1: &quot;C1 (Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)): Geely Group: 1.49 million new-energy vehicles&quot;. Can you confirm or correct it from a source you trust?</pre></body></html>
