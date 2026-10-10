@@ -1,0 +1,249 @@
+{
+  "report": "sample_stable",
+  "context": {
+    "role": "Comms lead",
+    "use": "publish a pilot summary",
+    "stakes": "high",
+    "accountable": "Pilot owner"
+  },
+  "action": "APPROVE",
+  "status": "STABLE",
+  "baseline": {
+    "action": "APPROVE",
+    "focus": null,
+    "rule": "all claims supported"
+  },
+  "panel_adds": {
+    "value": false,
+    "detail": "Synthetic fixture; no measured panel value."
+  },
+  "headline": "The scoped pilot summary holds up across the synthetic evidence views.",
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "claim",
+      "ref": "C1",
+      "summary": "A pilot reduced review time.",
+      "n_sources": 1,
+      "n_origins": 1
+    },
+    {
+      "id": "E2",
+      "kind": "claim",
+      "ref": "C2",
+      "summary": "The draft describes the trial limits.",
+      "n_sources": 1,
+      "n_origins": 1
+    },
+    {
+      "id": "E3",
+      "kind": "claim",
+      "ref": "C3",
+      "summary": "The result applies to the trial teams.",
+      "n_sources": 4,
+      "n_origins": 1
+    },
+    {
+      "id": "E4",
+      "kind": "claim",
+      "ref": "C4",
+      "summary": "Participants completed the pilot.",
+      "n_sources": 1,
+      "n_origins": 1
+    },
+    {
+      "id": "E5",
+      "kind": "claim",
+      "ref": "C5",
+      "summary": "The measured result needs context.",
+      "n_sources": 1,
+      "n_origins": 1
+    },
+    {
+      "id": "E6",
+      "kind": "scores",
+      "ref": "modules",
+      "summary": "Module scores from the synthetic report."
+    },
+    {
+      "id": "E7",
+      "kind": "finding",
+      "ref": "F1",
+      "summary": "Keep the pilot scope explicit."
+    }
+  ],
+  "panel": {
+    "n_judges": 9,
+    "r": 4,
+    "votes": [
+      {
+        "judge": "fixture-1",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E1",
+          "E3",
+          "E6",
+          "E7"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E3"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-2",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E2",
+          "E3",
+          "E4",
+          "E6"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E3"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-3",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E3",
+          "E4",
+          "E5",
+          "E7"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E3"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-4",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E1",
+          "E2",
+          "E4",
+          "E5"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E1"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-5",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E2",
+          "E4",
+          "E6",
+          "E7"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E2"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-6",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E1",
+          "E3",
+          "E5",
+          "E6"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E3"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-7",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E1",
+          "E2",
+          "E5",
+          "E7"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E1"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-8",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E2",
+          "E4",
+          "E5",
+          "E6"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E2"
+        ],
+        "why": "Synthetic vote for layout testing."
+      },
+      {
+        "judge": "fixture-9",
+        "model": "synthetic-fixture",
+        "saw": [
+          "E1",
+          "E4",
+          "E6",
+          "E7"
+        ],
+        "action": "APPROVE",
+        "cited": [
+          "E1"
+        ],
+        "why": "Synthetic vote for layout testing."
+      }
+    ],
+    "tally": {
+      "APPROVE": 9
+    },
+    "top_share": 1,
+    "n_eff": 2.3
+  },
+  "flip_evidence": null,
+  "hard_rules": [
+    {
+      "rule": "contradicted load-bearing claim → never APPROVE",
+      "triggered": false
+    }
+  ],
+  "reasons": [
+    {
+      "text": "Scoped claims are supported; STABLE needs 70% required.",
+      "evidence": [
+        "E1",
+        "E2"
+      ]
+    }
+  ],
+  "unchecked": [
+    "Statements beyond the synthetic pilot scope."
+  ],
+  "human": {
+    "to": "Pilot owner",
+    "question": null,
+    "answer": null
+  },
+  "before": null,
+  "trace": [
+    "SAMPLE DATA: synthetic UI fixture; not an Ezio report."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "report": "sample_stable",
+  "question": "Can this pilot summary be published?",
+  "analyzed_text": "Synthetic pilot summary for UI testing only.",
+  "verdict": {
+    "summary": "One claim needs independent confirmation.",
+    "issue_count": 1
+  },
+  "modules": {
+    "accuracy": 3,
+    "bias": 4,
+    "tone": 5,
+    "agreement": 2
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "text": "A pilot reduced review time.",
+      "verdict": "Supported",
+      "sources": [
+        {
+          "id": "S1_1",
+          "type": "News",
+          "title": "Pilot evaluation",
+          "date": "2026-10-10",
+          "outlet": "Independent Review"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The draft describes the trial limits.",
+      "verdict": "Supported",
+      "sources": [
+        {
+          "id": "S2_1",
+          "type": "News",
+          "title": "Trial methods",
+          "date": "2026-10-10",
+          "outlet": "Methods Journal"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "The result applies to the trial teams.",
+      "verdict": "Supported",
+      "sources": [
+        {
+          "id": "S3_1",
+          "type": "News",
+          "title": "Pilot launch statement",
+          "date": "2026-10-10",
+          "outlet": "Pilot Press Office"
+        },
+        {
+          "id": "S3_2",
+          "type": "News",
+          "title": "Pilot launch statement",
+          "date": "2026-10-10",
+          "outlet": "Pilot Press Office"
+        },
+        {
+          "id": "S3_3",
+          "type": "News",
+          "title": "Pilot launch statement",
+          "date": "2026-10-10",
+          "outlet": "Pilot Press Office"
+        },
+        {
+          "id": "S3_4",
+          "type": "News",
+          "title": "Pilot launch statement",
+          "date": "2026-10-10",
+          "outlet": "Pilot Press Office"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "Participants completed the pilot.",
+      "verdict": "Supported",
+      "sources": [
+        {
+          "id": "S4_1",
+          "type": "News",
+          "title": "Pilot completion audit",
+          "date": "2026-10-10",
+          "outlet": "Audit Office"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "text": "The measured result needs context.",
+      "verdict": "Supported",
+      "sources": [
+        {
+          "id": "S5_1",
+          "type": "News",
+          "title": "Pilot scope",
+          "date": "2026-10-10",
+          "outlet": "Methods Journal"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "category": "Scope",
+      "severity": "LOW",
+      "text": "Keep the pilot scope explicit."
+    }
+  ]
+}

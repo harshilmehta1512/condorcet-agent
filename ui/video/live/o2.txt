@@ -1,0 +1,9 @@
+ev_market: ESCALATE (STABLE) | tally {'ESCALATE': 8, 'APPROVE': 1} | mode offline-mock
+  Judges agree across different evidence slices (89%) → ESCALATE.
+  - C4 lists 6 sources but only 4 independent origin(s) could confirm it (1 published before the period it covers)
+  - C5 lists 6 sources but only 3 independent origin(s) could confirm it (3 published before the period it covers)
+  - C1: Ezio marks it contradicted, but the figure it quotes from its sources matches the claim; the verdict itself needs a human check
+  - Panel: {'ESCALATE': 8, 'APPROVE': 1}; top action ESCALATE at 89% (≥ 70% needed) → STABLE
+  - Simple-rule baseline (a claim Ezio could not verify): ESCALATE focusing on C2. Panel adds beyond the rule: no; same action and focus as the simple rule
+  - Research lead confirms C1
+  before: BLOCK (INFO_GAP) → after: ESCALATE (STABLE)

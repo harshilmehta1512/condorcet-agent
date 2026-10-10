@@ -1,0 +1,1 @@
+python -m agent.run --report parsed/ev_market.json --context contexts/analyst_client_note.json --offline

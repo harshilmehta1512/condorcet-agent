@@ -1,0 +1,612 @@
+{
+ "report": "work_from_home",
+ "question": "Is permanent remote work the best model for knowledge workers?",
+ "context": {
+  "role": "Comms lead",
+  "use": "publishing the answer as a company blog explainer",
+  "stakes": "high",
+  "accountable": "Head of communications"
+ },
+ "action": "ESCALATE",
+ "status": "STABLE",
+ "headline": "Judges agree across different evidence slices (100%) \u2192 ESCALATE.",
+ "evidence": [
+  {
+   "id": "E1",
+   "kind": "claim",
+   "ref": "C1",
+   "summary": "C1 (Not enough evidence): Offices and hybrid schedules fragment attention with commutes, desk-side interruptions, and calendar sprawl built around presence instead of output.",
+   "verdict": "Not enough evidence",
+   "text": "Offices and hybrid schedules fragment attention with commutes, desk-side interruptions, and calendar sprawl built around presence instead of output.",
+   "n_sources": 6,
+   "n_origins": 6,
+   "origins": [
+    {
+     "ids": [
+      "S1"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S2"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S3"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S4"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S5"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S6"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S1",
+     "type": "Other",
+     "title": "Hybrid Work Schedule Examples for 2026: Models & Tools",
+     "date": "2026-04-27",
+     "outlet": ""
+    },
+    {
+     "id": "S2",
+     "type": "Other",
+     "title": "The Complete Guide to Hybrid Work in 2026 - Hubstar : Hubstar",
+     "date": "2026-01-01",
+     "outlet": "Hubstar"
+    },
+    {
+     "id": "S3",
+     "type": "Other",
+     "title": "Hybrid work statistics: What data says in 2026",
+     "date": "2026-06-15",
+     "outlet": ""
+    },
+    {
+     "id": "S4",
+     "type": "Other",
+     "title": "Hybrid Work Schedule: 8 Models Compared for 2026",
+     "date": "2025-10-09",
+     "outlet": ""
+    },
+    {
+     "id": "S5",
+     "type": "Other",
+     "title": "80+ Hybrid Work Statistics in 2026: Productivity & Preferences",
+     "date": "2025-12-04",
+     "outlet": ""
+    },
+    {
+     "id": "S6",
+     "type": "Other",
+     "title": "Hybrid vs Remote Work in 2026: A Complete Organizational Guide - DeskFlex Blog",
+     "date": "2026-08-20",
+     "outlet": "DeskFlex Blog"
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "claim",
+   "ref": "C2",
+   "summary": "C2 (Not enough evidence): Remote-first teams can design work around deep focus, async communication, and written clarity.",
+   "verdict": "Not enough evidence",
+   "text": "Remote-first teams can design work around deep focus, async communication, and written clarity.",
+   "n_sources": 6,
+   "n_origins": 6,
+   "origins": [
+    {
+     "ids": [
+      "S7"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S8"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S9"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S10"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S11"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S12"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S7",
+     "type": "Other",
+     "title": "Async Writing for Remote Teams | RemoteWorkSaaS Blog",
+     "date": "2026-07-06",
+     "outlet": "RemoteWorkSaaS Blog"
+    },
+    {
+     "id": "S8",
+     "type": "Other",
+     "title": "Async-First for Developers: Reclaim Your Deep Work Hours",
+     "date": "2025-12-16",
+     "outlet": ""
+    },
+    {
+     "id": "S9",
+     "type": "Other",
+     "title": "Async Communication for Remote & Hybrid Teams",
+     "date": "2026-05-28",
+     "outlet": ""
+    },
+    {
+     "id": "S10",
+     "type": "Other",
+     "title": "Async-First Teams: The Step-by-Step Framework for Engineering Teams That Ship Without Constant Meetings - HR Oasis",
+     "date": "2026-06-08",
+     "outlet": "HR Oasis"
+    },
+    {
+     "id": "S11",
+     "type": "Other",
+     "title": "How to Move Your Team Toward Async-First Communication",
+     "date": "2021-03-02",
+     "outlet": ""
+    },
+    {
+     "id": "S12",
+     "type": "Other",
+     "title": "Asynchronous Communication: How to Use It for Remote Work Success",
+     "date": "2025-07-29",
+     "outlet": "Indeed"
+    }
+   ]
+  },
+  {
+   "id": "E3",
+   "kind": "claim",
+   "ref": "C3",
+   "summary": "C3 (Not enough evidence): Employees still organize life around commuting, while teams suffer unequal communication between in-room and remote participants.",
+   "verdict": "Not enough evidence",
+   "text": "Employees still organize life around commuting, while teams suffer unequal communication between in-room and remote participants.",
+   "n_sources": 1,
+   "n_origins": 1,
+   "origins": [
+    {
+     "ids": [
+      "S13"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S13",
+     "type": "News",
+     "title": "Remote work productivity: Employees and managers split on commuting factor | Fortune",
+     "date": "2023-01-09",
+     "outlet": "Fortune"
+    }
+   ]
+  },
+  {
+   "id": "E4",
+   "kind": "claim",
+   "ref": "C4",
+   "summary": "C4 (Not enough evidence): Permanent remote work removes that ambiguity.",
+   "verdict": "Not enough evidence",
+   "text": "Permanent remote work removes that ambiguity.",
+   "n_sources": 2,
+   "n_origins": 2,
+   "origins": [
+    {
+     "ids": [
+      "S14"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S15"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S14",
+     "type": "Official",
+     "title": "Work from home and employee well-being: a double-edged sword",
+     "date": "2025-08-08",
+     "outlet": ""
+    },
+    {
+     "id": "S15",
+     "type": "Reference",
+     "title": "Remote work - Wikipedia",
+     "date": "",
+     "outlet": "Wikipedia"
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "claim",
+   "ref": "C5",
+   "summary": "C5 (Supported): The results are measurable: studies consistently show remote knowledge workers gaining the equivalent of several productive hours per week, with less time lost to commuting and fewer low-value meetings.",
+   "verdict": "Supported",
+   "text": "The results are measurable: studies consistently show remote knowledge workers gaining the equivalent of several productive hours per week, with less time lost to commuting and fewer low-value meetings.",
+   "n_sources": 6,
+   "n_origins": 4,
+   "origins": [
+    {
+     "ids": [
+      "S16"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S17"
+     ],
+     "why": []
+    },
+    {
+     "ids": [
+      "S18",
+      "S19",
+      "S20"
+     ],
+     "why": [
+      "same outlet"
+     ]
+    },
+    {
+     "ids": [
+      "S21"
+     ],
+     "why": []
+    }
+   ],
+   "predating": [],
+   "sources": [
+    {
+     "id": "S16",
+     "type": "Official",
+     "title": "The Future of Working Away from Work and Daily Travel",
+     "date": "",
+     "outlet": ""
+    },
+    {
+     "id": "S17",
+     "type": "Official",
+     "title": "Supporting the productivity and wellbeing of remote workers",
+     "date": "2021-07-23",
+     "outlet": ""
+    },
+    {
+     "id": "S18",
+     "type": "Official",
+     "title": "Are We Really More Productive Working from Home? | Chicago Booth Review",
+     "date": "",
+     "outlet": "Chicago Booth Review"
+    },
+    {
+     "id": "S19",
+     "type": "Official",
+     "title": "Are We Really More Productive Working from Home? | Chicago Booth Review",
+     "date": "",
+     "outlet": "Chicago Booth Review"
+    },
+    {
+     "id": "S20",
+     "type": "Official",
+     "title": "Are We Really More Productive Working from Home? | Chicago Booth Review",
+     "date": "2021-08-18",
+     "outlet": "Chicago Booth Review"
+    },
+    {
+     "id": "S21",
+     "type": "News",
+     "title": "Too Many Zoom Meetings? 'Core Hours' Keep Some Remote Workers Productive and Sane - WSJ",
+     "date": "2021-07-20",
+     "outlet": "WSJ"
+    }
+   ]
+  },
+  {
+   "id": "E6",
+   "kind": "scores",
+   "ref": "modules",
+   "summary": "Module scores (of 5): accuracy not scored, bias 1, tone 4, agreement 5"
+  }
+ ],
+ "panel": {
+  "n_judges": 9,
+  "n_failed": 0,
+  "failed": [],
+  "r": 4,
+  "mode": "offline-mock",
+  "votes": [
+   {
+    "judge": "gpt-nano",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E2",
+     "E6"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "gpt-mini",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E2"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "haiku",
+    "model": "offline-mock",
+    "saw": [
+     "E3",
+     "E4",
+     "E6"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E3",
+     "E4",
+     "E6"
+    ],
+    "why": "C3 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "sonnet",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E1",
+     "E3"
+    ],
+    "why": "C1 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "gemini",
+    "model": "offline-mock",
+    "saw": [
+     "E4",
+     "E5",
+     "E6"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E4",
+     "E6"
+    ],
+    "why": "C4 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "llama",
+    "model": "offline-mock",
+    "saw": [
+     "E2",
+     "E5",
+     "E6"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E2",
+     "E6"
+    ],
+    "why": "C2 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "qwen",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "why": "C1 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "mistral",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E1",
+     "E3",
+     "E4"
+    ],
+    "why": "C1 is unverified",
+    "cached": true
+   },
+   {
+    "judge": "deepseek",
+    "model": "offline-mock",
+    "saw": [
+     "E1",
+     "E2"
+    ],
+    "action": "ESCALATE",
+    "cited": [
+     "E1",
+     "E2"
+    ],
+    "why": "C1 is unverified",
+    "cached": true
+   }
+  ],
+  "tally": {
+   "ESCALATE": 9
+  },
+  "top_action": "ESCALATE",
+  "top_share": 1.0
+ },
+ "flip_evidence": {
+  "id": "E2",
+  "ref": "C2",
+  "tv": null,
+  "saw_it": {},
+  "didnt": {},
+  "note": "most-cited by escalating judges"
+ },
+ "hard_rules": [
+  {
+   "rule": "Load-bearing claim contradicted by Ezio -> never APPROVE",
+   "triggered": false,
+   "evidence": []
+  },
+  {
+   "rule": "CRITICAL finding -> never APPROVE as is (at least REWRITE)",
+   "triggered": false,
+   "evidence": []
+  }
+ ],
+ "load_bearing": [
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5"
+ ],
+ "baseline": {
+  "action": "ESCALATE",
+  "focus": "C1",
+  "rule": "a claim Ezio could not verify"
+ },
+ "panel_adds": {
+  "value": false,
+  "detail": "same action and focus as the simple rule"
+ },
+ "reasons": [
+  {
+   "text": "C5 lists 6 sources but only 4 independent origin(s) could confirm it",
+   "evidence": [
+    "E5",
+    "C5",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21"
+   ]
+  },
+  {
+   "text": "Ezio bias score 1/5: the answer leans to one side; a balanced rewrite is needed before it is used",
+   "evidence": [
+    "E6"
+   ]
+  },
+  {
+   "text": "Ezio could not score accuracy (not scored): too few checkable claims, so silence is not support",
+   "evidence": [
+    "E6"
+   ]
+  },
+  {
+   "text": "Panel: {'ESCALATE': 9}; top action ESCALATE at 100% (\u2265 70% needed) \u2192 STABLE",
+   "evidence": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio could not verify): ESCALATE focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "evidence": [
+    "C1"
+   ]
+  }
+ ],
+ "unchecked": [],
+ "human": {
+  "to": "Head of communications",
+  "question": "All judges escalate; the most-cited reason is C2: \"C2 (Not enough evidence): Remote-first teams can design work around deep focus, async communication, and written clarity.\". Can you confirm it, or should we cut it?",
+  "answer": null
+ },
+ "before": null,
+ "trace": [
+  "parsed 5 claims, 0 findings",
+  "6 evidence pieces; each shown to 4 of 9 judges",
+  "panel mode: offline mock",
+  "tally {'ESCALATE': 9} \u2192 STABLE",
+  "hard floor: none triggered",
+  "final action: ESCALATE"
+ ]
+}

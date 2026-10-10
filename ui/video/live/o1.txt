@@ -1,0 +1,10 @@
+ev_market: BLOCK (INFO_GAP) | tally {'ESCALATE': 4, 'BLOCK': 4, 'APPROVE': 1} | mode offline-mock
+  Every judge who saw C1 agrees → BLOCK; C1 is the evidence a reviewer must not miss. Asking Research lead to verify it.
+  - C4 lists 6 sources but only 4 independent origin(s) could confirm it (1 published before the period it covers)
+  - C5 lists 6 sources but only 3 independent origin(s) could confirm it (3 published before the period it covers)
+  - C1: Ezio marks it contradicted, but the figure it quotes from its sources matches the claim; the verdict itself needs a human check
+  - Hard rule: Load-bearing claim contradicted by Ezio -> never APPROVE
+  - Panel: {'ESCALATE': 4, 'BLOCK': 4, 'APPROVE': 1}; top action ESCALATE at 44% (< 70% needed) → INFO_GAP
+  - The split is explained by who was shown C1 (judges who saw it {'BLOCK': 4}, judges who did not {'ESCALATE': 4, 'APPROVE': 1}): an information gap we created by hiding it, not real uncertainty. Decision follows the judges who saw it; C1 is the must-not-miss evidence.
+  - Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule
+  ? to Research lead: The decision depends on C1: "C1 (Contradicted: amount (sources say 1.49 million, growing 52 percent compared with 2023)): Geely Group: 1.49 million new-energy vehicles". Can you confirm or correct it from a source you trust?
