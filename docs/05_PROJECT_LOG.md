@@ -1,6 +1,6 @@
 # 05 — Project Log (Condorcet Agent, Build a Trust Agent track)
 
-Update after every completed task (rule F1). Last updated: **2:45 PM PT**. Real-model (TokenRouter) path hardened and tested end to end against a local fake server; ready for the key. Deadline extended to **3:45** (freeze 3:15, record 3:15–3:35, submit 3:35). **All four real reports** run end to end (offline judges): EV/analyst → ESCALATE (FRAGILE→STABLE after human); Nuclear/policy brief → PULL_SOURCE (STABLE); Work-from-home/comms → ESCALATE (STABLE 9/9); AGI/board memo → ESCALATE (FRAGILE, splits on C1). Need: TokenRouter key (else label judges as simulated), repo link.
+Update after every completed task (rule F1). Last updated: **2:54 PM PT**. External-review fix (D22) shipped: INFO_GAP status + simple-rule baseline + panel-adds flag. Real-model (TokenRouter) path hardened and tested end to end against a local fake server; ready for the key. Deadline extended to **3:45** (freeze 3:15, record 3:15–3:35, submit 3:35). **All four real reports** run end to end (offline judges): EV/analyst → ESCALATE (FRAGILE→STABLE after human); Nuclear/policy brief → PULL_SOURCE (STABLE); Work-from-home/comms → ESCALATE (STABLE 9/9); AGI/board memo → ESCALATE (FRAGILE, splits on C1). Need: TokenRouter key (else label judges as simulated), repo link.
 
 ## 1. Team split
 | Person | Owns |
@@ -57,6 +57,7 @@ Update after every completed task (rule F1). Last updated: **2:45 PM PT**. Real-
 | D19 | 2:30 | AGI report: C2 lists 4 sources → 1 usable origin (same WSJ article twice; 2 sources dated before 2025 ended); C4 lists the same law-journal article twice. New context `contexts/strategy_memo.json` (board memo, COO accountable) | Strongest single example for the video |
 | D20 | 2:44 | Pre-flight tooling: `--dry-run` (prints the exact prompts + token estimate, sends nothing), `agent/check_models.py --list` (free model catalog) and ping (9 tiny calls), `scripts/fake_tokenrouter.py` (local fake for zero-cost wiring tests); `CONDORCET_CACHE` / `CONDORCET_OUT` isolate test runs from real results | Spend credit only after the wiring is proven |
 | D21 | 2:44 | Judge prompt: "[H1] is from the accountable human; treat it as authoritative for the claim it names" | Real LLMs must weigh the human's answer correctly |
+| D22 | 2:53 | **External review accepted:** "the disagreement is created by hiding evidence, and the flip evidence is what a simple rule finds." Fix: new status INFO_GAP for exposure-explained splits (decision follows the judges who saw the piece); FRAGILE only for disagreement among judges with the same evidence; every decision shows a simple-rule baseline and a `panel_adds` flag. Result with simulated judges: panel adds nothing beyond the rule on EV, WFH, AGI; differs on Nuclear (PULL_SOURCE vs REWRITE). Real-model test (full-evidence panel) pending the key | Close the loophole by claiming only what we show, against the obvious baseline |
 | D11 | 1:41 | Human answer → offline keyword mapping (confirm / deny / inconclusive) onto the flip claim; shown to all judges as H1 | Deterministic, demo-safe |
 
 ## 4. Bugs
@@ -73,6 +74,7 @@ Update after every completed task (rule F1). Last updated: **2:45 PM PT**. Real-
 |---|---|---|
 | T0 | Read official track specs; cloned starter repos | 1:17 |
 | T-docs | Docs 01–05 rewritten for the locked design | 1:40 |
+| T13 | D22 implemented; all 4 reports + EV human loop re-run (EV: BLOCK INFO_GAP → after human: ESCALATE STABLE) | 2:53 |
 | T12 | Real-model path tested end to end on fake TokenRouter: 404 model excluded, temperature-rejecting model retried, chatty JSON parsed, 2nd run 100% cached, wrong key refused, real `decisions/` untouched | 2:44 |
 | T7c | AGI timelines report transcribed + run (strategy memo context); all 4 reports re-run after B3 fix | 2:31 |
 | T7b | Work-from-home report transcribed + run (comms context) | 2:28 |

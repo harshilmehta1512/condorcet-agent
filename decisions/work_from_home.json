@@ -360,6 +360,8 @@
  ],
  "panel": {
   "n_judges": 9,
+  "n_failed": 0,
+  "failed": [],
   "r": 4,
   "mode": "offline-mock",
   "votes": [
@@ -540,6 +542,15 @@
   "C4",
   "C5"
  ],
+ "baseline": {
+  "action": "ESCALATE",
+  "focus": "C1",
+  "rule": "a claim Ezio could not verify"
+ },
+ "panel_adds": {
+  "value": false,
+  "detail": "same action and focus as the simple rule"
+ },
  "reasons": [
   {
    "text": "C5 lists 6 sources but only 4 independent origin(s) could confirm it",
@@ -574,6 +585,12 @@
     "E3",
     "E4",
     "E6"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio could not verify): ESCALATE focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "evidence": [
+    "C1"
    ]
   }
  ],

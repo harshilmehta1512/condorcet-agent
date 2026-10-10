@@ -167,18 +167,56 @@ def hard_floor(pieces, load_bearing_refs, human_overrides):
     return floor, rules
 
 
+INFO_GAP_SHARE = 0.80  # each exposure group must agree this much for the split to count as explained
+
+
+def _top_share(counter):
+    n = sum(counter.values())
+    return (max(counter.values()) / n) if n else 1.0
+
+
+def rule_baseline(pieces, context, human_overrides=()):
+    """What a simple rule decides with no judges at all (the comparison a reviewer would ask for)."""
+    high = context.get("stakes", "high") == "high"
+    claims = [p for p in pieces if p["kind"] == "claim" and p["ref"] not in human_overrides]
+    contra = [p for p in claims if re.search(r"contradict|refut|false", p["verdict"], re.I)]
+    crit = [p for p in pieces if p["kind"] == "finding" and p.get("severity", "").upper() == "CRITICAL"
+            and p["ref"] not in human_overrides]
+    unver = [p for p in claims if re.search(r"not enough|unverif|insufficient", p["verdict"], re.I)]
+    if contra:
+        return {"action": "BLOCK" if high else "REWRITE", "focus": contra[0]["ref"], "rule": "a claim Ezio marked contradicted"}
+    if crit:
+        return {"action": "REWRITE", "focus": crit[0]["ref"], "rule": "a CRITICAL finding"}
+    if unver:
+        return {"action": "ESCALATE" if high else "PULL_SOURCE", "focus": unver[0]["ref"], "rule": "a claim Ezio could not verify"}
+    return {"action": "APPROVE", "focus": None, "rule": "no contradicted, critical or unverified item"}
+
+
 def decide(votes, pieces, context, load_bearing_refs, human_overrides=()):
+    """STABLE: >= 70% agree. INFO_GAP: the split is explained by who was shown one piece (we created it by
+    hiding evidence), so follow the judges who saw it. FRAGILE: judges who saw the same evidence still disagree."""
     t = tally(votes)
     top, k = t.most_common(1)[0]
     share = k / len(votes)
-    stable = share >= STABLE_SHARE
-    flip = None if stable else flip_evidence(votes, pieces)
-    if stable:
-        action = top
+    flip = None if share >= STABLE_SHARE else flip_evidence(votes, pieces)
+    if share >= STABLE_SHARE:
+        status, action = "STABLE", top
+    elif flip and _top_share(Counter(flip["saw_it"])) >= INFO_GAP_SHARE and _top_share(Counter(flip["didnt"])) >= INFO_GAP_SHARE:
+        status = "INFO_GAP"
+        action = Counter(flip["saw_it"]).most_common(1)[0][0]  # the informed judges' view
     else:
+        status = "FRAGILE"
         action = "ESCALATE" if context.get("stakes", "high") == "high" else "REWRITE"
     floor, rules = hard_floor(pieces, load_bearing_refs, set(human_overrides))
     if STRICTNESS[floor] > STRICTNESS[action]:
         action = floor
-    return {"action": action, "status": "STABLE" if stable else "FRAGILE", "tally": dict(t),
-            "top_action": top, "top_share": round(share, 3), "flip_evidence": flip, "hard_rules": rules}
+    base = rule_baseline(pieces, context, set(human_overrides))
+    focus = flip["ref"] if flip else None
+    adds = []
+    if action != base["action"]:
+        adds.append(f'different action ({action} vs rule {base["action"]})')
+    if focus and focus != base["focus"]:
+        adds.append(f'different focus ({focus} vs rule {base["focus"]})')
+    return {"action": action, "status": status, "tally": dict(t), "top_action": top, "top_share": round(share, 3),
+            "flip_evidence": flip, "hard_rules": rules, "baseline": base,
+            "panel_adds": {"value": bool(adds), "detail": "; ".join(adds) or "same action and focus as the simple rule"}}

@@ -7,9 +7,9 @@
   "stakes": "high",
   "accountable": "Chief Operating Officer"
  },
- "action": "ESCALATE",
- "status": "FRAGILE",
- "headline": "Decision splits depending on C1; asking Chief Operating Officer.",
+ "action": "BLOCK",
+ "status": "INFO_GAP",
+ "headline": "Every judge who saw C1 agrees \u2192 BLOCK; C1 is the evidence a reviewer must not miss. Asking Chief Operating Officer to verify it.",
  "evidence": [
   {
    "id": "E1",
@@ -393,6 +393,8 @@
  ],
  "panel": {
   "n_judges": 9,
+  "n_failed": 0,
+  "failed": [],
   "r": 4,
   "mode": "offline-mock",
   "votes": [
@@ -587,6 +589,15 @@
   "C4",
   "C5"
  ],
+ "baseline": {
+  "action": "BLOCK",
+  "focus": "C1",
+  "rule": "a claim Ezio marked contradicted"
+ },
+ "panel_adds": {
+  "value": false,
+  "detail": "same action and focus as the simple rule"
+ },
  "reasons": [
   {
    "text": "C2 lists 4 sources but only 1 independent origin(s) could confirm it (2 published before the period it covers)",
@@ -655,7 +666,7 @@
    ]
   },
   {
-   "text": "Panel: {'BLOCK': 4, 'ESCALATE': 5}; top action ESCALATE at 56% (< 70% needed) \u2192 FRAGILE",
+   "text": "Panel: {'BLOCK': 4, 'ESCALATE': 5}; top action ESCALATE at 56% (< 70% needed) \u2192 INFO_GAP",
    "evidence": [
     "E1",
     "E2",
@@ -666,9 +677,15 @@
    ]
   },
   {
-   "text": "Decision depends on E1 (C1): judges who saw it {'BLOCK': 4}, judges who did not {'ESCALATE': 5}",
+   "text": "The split is explained by who was shown C1 (judges who saw it {'BLOCK': 4}, judges who did not {'ESCALATE': 5}): an information gap we created by hiding it, not real uncertainty. Decision follows the judges who saw it; C1 is the must-not-miss evidence.",
    "evidence": [
     "E1",
+    "C1"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): BLOCK focusing on C1. Panel adds beyond the rule: no; same action and focus as the simple rule",
+   "evidence": [
     "C1"
    ]
   }
@@ -684,8 +701,8 @@
   "parsed 5 claims, 1 findings",
   "7 evidence pieces; each shown to 4 of 9 judges",
   "panel mode: offline mock",
-  "tally {'BLOCK': 4, 'ESCALATE': 5} \u2192 FRAGILE",
+  "tally {'BLOCK': 4, 'ESCALATE': 5} \u2192 INFO_GAP",
   "hard floor: ['Load-bearing claim contradicted by Ezio -> never APPROVE']",
-  "final action: ESCALATE"
+  "final action: BLOCK"
  ]
 }

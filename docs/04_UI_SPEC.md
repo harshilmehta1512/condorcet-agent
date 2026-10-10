@@ -6,7 +6,7 @@
 ## Layout (top to bottom = video order)
 
 1. **Header:** report picker (4 reports), decision context ("Analyst → client note · high stakes · accountable: Research lead"), and the original question.
-2. **Decision card:** big action badge with text + colour (APPROVE green, REWRITE amber, PULL_SOURCE blue, ESCALATE purple, BLOCK red) and status chip **STABLE** / **FRAGILE**. One-line headline.
+2. **Decision card:** big action badge with text + colour (APPROVE green, REWRITE amber, PULL_SOURCE blue, ESCALATE purple, BLOCK red) and status chip **STABLE** / **INFO_GAP** / **FRAGILE**. One-line headline. Next to it, a small **"Simple rule says: <baseline.action> (focus <baseline.focus>) · Panel adds: yes/no"** box from `baseline` and `panel_adds`. Never hide a "no".
 3. **Evidence pieces:** a table, one row per piece: id, kind (claim / scores / finding), short text, Ezio verdict, and for claims **"4 sources → 1 independent origin"** (expand to see the grouped sources and why they were grouped).
 4. **The judge panel (hero visual):** a grid, rows = 9 judges (model names), columns = evidence pieces. Filled cell = the judge saw it. Last column = the judge's action (coloured badge). It shows at a glance that different judges saw different evidence.
    Below it: vote tally bar + "top action share 56% → FRAGILE (needs ≥ 70%)" + "n_eff ≈ 2.3 of 9".

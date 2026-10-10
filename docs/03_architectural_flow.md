@@ -36,7 +36,9 @@ Entry point: `python -m agent.run --report reports/ev_market.pdf --context conte
 ```json
 {"report": "ev_market",
  "context": {"role": "Analyst", "use": "client note", "stakes": "high", "accountable": "Research lead"},
- "action": "ESCALATE", "status": "FRAGILE",
+ "action": "ESCALATE", "status": "STABLE | INFO_GAP | FRAGILE",
+ "baseline": {"action": "BLOCK", "focus": "C1", "rule": "a claim Ezio marked contradicted"},
+ "panel_adds": {"value": false, "detail": "same action and focus as the simple rule"},
  "headline": "Decision depends on C3, which rests on one origin; asking the research lead.",
  "evidence": [{"id": "E3", "kind": "claim", "ref": "C3", "summary": "...", "n_sources": 4, "n_origins": 1}],
  "panel": {"n_judges": 9, "r": 4,
@@ -61,7 +63,8 @@ After `--human`, `before` holds the previous action/status/tally so the UI can s
 | 3 | Subspaces | Each piece → R = ⌈0.4·N⌉ judges (N = 9 → 4), balanced round-robin + per-report random judge order (seed 42); every judge always sees the question, context and analyzed text | Random subspace method; every piece seen by several judges |
 | 4 | Judge prompt | Context + the evidence pieces it was given → JSON `{action, cited:[ids], why}`; must cite only pieces it saw | Traceable votes |
 | 5 | Panel roster | 9 models, ≥ 5 families (fill from TokenRouter); temperature 0; cache by hash | Independence across families; reproducible |
-| 6 | Stability | STABLE if top action share ≥ 0.70; else FRAGILE | 7 of 9 judges is a clear majority with different evidence |
+| 6 | Stability | STABLE if top action share ≥ 0.70; INFO_GAP if the split is explained by exposure to one piece (judges who saw it ≥ 80% agree AND judges who didn't ≥ 80% agree) → follow the judges who saw it; else FRAGILE | A split we created by hiding evidence is not uncertainty (external review, D22) |
+| 6b | Baseline | `rule_baseline`: contradicted claim → BLOCK (high stakes) / REWRITE; CRITICAL finding → REWRITE; unverified → ESCALATE / PULL_SOURCE; else APPROVE. Output `baseline` + `panel_adds {value, detail}` | Every claim of panel value is checked against the obvious alternative |
 | 7 | n_eff | Kish with ρ̄ = mean pairwise agreement correlation of judges' action indicators across this report's re-runs (with one report, report vote-agreement instead and label it) | Honest about the small panel |
 | 8 | Flip evidence | For each piece: action distribution among judges who saw it vs didn't; pick the piece with the largest total-variation distance | "Which evidence the decision depends on" |
 | 9 | Hard floor | Load-bearing contradicted claim → never APPROVE; CRITICAL finding → never APPROVE without human | Safety floor in code; LLMs can only be stricter |

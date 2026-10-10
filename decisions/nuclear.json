@@ -425,6 +425,8 @@
  ],
  "panel": {
   "n_judges": 9,
+  "n_failed": 0,
+  "failed": [],
   "r": 4,
   "mode": "offline-mock",
   "votes": [
@@ -620,6 +622,15 @@
   "C4",
   "C5"
  ],
+ "baseline": {
+  "action": "REWRITE",
+  "focus": "C1",
+  "rule": "a claim Ezio marked contradicted"
+ },
+ "panel_adds": {
+  "value": true,
+  "detail": "different action (PULL_SOURCE vs rule REWRITE)"
+ },
  "reasons": [
   {
    "text": "C4 lists 6 sources but only 5 independent origin(s) could confirm it",
@@ -675,6 +686,12 @@
     "E6",
     "E7",
     "E8"
+   ]
+  },
+  {
+   "text": "Simple-rule baseline (a claim Ezio marked contradicted): REWRITE focusing on C1. Panel adds beyond the rule: YES, different action (PULL_SOURCE vs rule REWRITE)",
+   "evidence": [
+    "C1"
    ]
   }
  ],

@@ -131,17 +131,26 @@ def run(report, context_path, offline, human_answer=None, dry_run=False):
     reasons.append({"text": f'Panel: {d["tally"]}; top action {d["top_action"]} at {d["top_share"]:.0%} '
                             f'({"≥" if d["status"] == "STABLE" else "<"} {core.STABLE_SHARE:.0%} needed) → {d["status"]}',
                     "evidence": sorted({c for v in votes for c in v["cited"]})})
-    if flip:
-        fp = by_id[flip["id"]]
-        reasons.append({"text": f'Decision depends on {flip["id"]} ({flip["ref"]}): judges who saw it {flip["saw_it"]}, '
-                                f'judges who did not {flip["didnt"]}', "evidence": [flip["id"], flip["ref"]]})
+    if flip and d["status"] == "INFO_GAP":
+        reasons.append({"text": f'The split is explained by who was shown {flip["ref"]} (judges who saw it {flip["saw_it"]}, '
+                                f'judges who did not {flip["didnt"]}): an information gap we created by hiding it, not real '
+                                f'uncertainty. Decision follows the judges who saw it; {flip["ref"]} is the must-not-miss evidence.',
+                        "evidence": [flip["id"], flip["ref"]]})
+    elif flip:
+        reasons.append({"text": f'Judges who saw the same evidence still disagree (around {flip["ref"]}: saw it {flip["saw_it"]}, '
+                                f'did not {flip["didnt"]}): genuine disagreement, so a human decides', "evidence": [flip["id"], flip["ref"]]})
+    b = d["baseline"]
+    reasons.append({"text": f'Simple-rule baseline ({b["rule"]}): {b["action"]}'
+                            + (f' focusing on {b["focus"]}' if b["focus"] else "")
+                            + f'. Panel adds beyond the rule: {"YES, " if d["panel_adds"]["value"] else "no; "}{d["panel_adds"]["detail"]}',
+                    "evidence": [b["focus"]] if b["focus"] else []})
     if human_answer:
         reasons.append({"text": f'{context["accountable"]} {human.get("reading", "answered about")} '
                                 f'{prev["flip_evidence"]["ref"] if prev and prev.get("flip_evidence") else "the flagged evidence"}',
                         "evidence": ["H1"]})
 
     question = None
-    if d["status"] == "FRAGILE" and flip:
+    if d["status"] in ("FRAGILE", "INFO_GAP") and flip:
         fp = by_id[flip["id"]]
         question = (f'The decision depends on {flip["ref"]}: "{fp["summary"][:160]}". '
                     f'Can you confirm or correct it from a source you trust?')
@@ -155,7 +164,9 @@ def run(report, context_path, offline, human_answer=None, dry_run=False):
                         f'Can you confirm it, or should we cut it?')
     headline = {
         "STABLE": f'Judges agree across different evidence slices ({d["top_share"]:.0%}) → {d["action"]}.',
-        "FRAGILE": (f'Decision splits depending on {flip["ref"]}; asking {context["accountable"]}.' if flip
+        "INFO_GAP": (f'Every judge who saw {flip["ref"]} agrees → {d["action"]}; {flip["ref"]} is the evidence a reviewer must not miss. '
+                     f'Asking {context["accountable"]} to verify it.' if flip else d["action"]),
+        "FRAGILE": (f'Judges with the same evidence disagree (around {flip["ref"]}); asking {context["accountable"]}.' if flip
                     else f'Judges split; {d["action"]}.'),
     }[d["status"]]
 
@@ -168,6 +179,7 @@ def run(report, context_path, offline, human_answer=None, dry_run=False):
                   "mode": "llm" if use_llm else "offline-mock",
                   "votes": votes, "tally": d["tally"], "top_action": d["top_action"], "top_share": d["top_share"]},
         "flip_evidence": flip, "hard_rules": d["hard_rules"], "load_bearing": sorted(lb),
+        "baseline": d["baseline"], "panel_adds": d["panel_adds"],
         "reasons": reasons, "unchecked": unchecked(parsed),
         "human": {"to": context["accountable"], "question": question if not human_answer else
                   (prev or {}).get("human", {}).get("question"), "answer": human_answer},

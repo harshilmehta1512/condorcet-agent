@@ -39,9 +39,11 @@ We **do not claim** to know whether a decision is "correct." Without ground trut
 2. **Group sources by origin** per claim (same outlet / near-identical title / same story and date) → number of sources vs number of **independent origins**.
 3. **Build evidence pieces:** one per claim (with its grouped sources), one for the module scores, one per finding.
 4. **Judge panel with evidence subspaces:** 9 judges (different model families via TokenRouter). Each sees the decision context plus a **different subset of the evidence pieces** (each piece shown to ~4 of 9 judges). Each picks APPROVE / REWRITE / PULL_SOURCE / ESCALATE / BLOCK and cites the evidence it used.
-5. **Stability:** share of judges choosing the top action, and the panel's **n_eff**.
-   - **Stable** (top action ≥ 70% of judges, and not contradicted by any piece of evidence a dissenting judge cites) → the agent takes that action.
-   - **Fragile** → find the **flip evidence**: the piece whose presence best separates judges that chose different actions ("everyone who saw claim 3 says ESCALATE; everyone who didn't says APPROVE").
+5. **Three outcomes (revised 2:53 after an external review, see `05` D22):**
+   - **STABLE:** ≥ 70% of judges choose the same action → the agent takes it.
+   - **INFO_GAP:** the split is fully explained by *who was shown* one piece (each exposure group ≥ 80% internally agreed). That disagreement is one **we created by hiding evidence**, so it is **not** called uncertainty: the decision follows the judges who saw the piece, and the piece is reported as the evidence a reviewer must not miss.
+   - **FRAGILE:** judges who saw the same evidence still disagree → genuine disagreement → a human decides.
+   - Every decision also shows a **simple-rule baseline** ("contradicted / CRITICAL / unverified → act on it") and a **"panel adds beyond the rule: yes/no"** flag, so we never claim value the rule alone would give.
 6. **Hard rules in code (safety floor):** a load-bearing claim that Ezio marks as contradicted can never be APPROVE; a CRITICAL finding can never be silently approved. The LLM panel can make the decision stricter, never looser than these rules.
 7. **Human in the loop:** if fragile, escalate to the accountable person named in the context with **one question about the flip evidence**. Their answer is added as new evidence, the panel re-runs, and the trace shows the decision before → after.
 
@@ -61,6 +63,7 @@ Most teams map Ezio's verdict to an action, maybe with one LLM summary. We:
 - tell the human **exactly which evidence** the decision depends on.
 
 ## 7. Honest limits
+- **With simulated judges the panel mostly reproduces the simple rule** (they are rules). On our 4 reports: same action and focus as the rule on EV, Work-from-home and AGI; different action only on Nuclear. Whether real LLM judges add anything beyond the rule is the open experiment (needs TokenRouter).
 - Judges are LLMs. Their stability isn't correctness; we say "holds up," never "correct."
 - Source grouping uses simple transparent rules; it can miss hidden shared origins.
 - 9 judges per report is a small panel; n_eff is reported with that caveat.
